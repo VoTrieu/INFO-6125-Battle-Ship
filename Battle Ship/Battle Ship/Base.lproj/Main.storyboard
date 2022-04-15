@@ -1,95 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wEI-DD-Xxh">
     <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="sFC-v7-jS5">
+            <objects>
+                <viewController id="wEI-DD-Xxh" customClass="LoginViewController" customModule="Battle_Ship" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Pg-9u-spH">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="-BS-_Hero_Image_-_Desktop" translatesAutoresizingMaskIntoConstraints="NO" id="Tqp-qZ-wfD">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="UDh-CC-d8w"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gw8-ts-LCQ">
+                                <rect key="frame" x="273" y="558" width="288" height="44.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BattleShip Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLp-fv-28S">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="44.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="umQ-zY-qP1">
+                                <rect key="frame" x="233" y="640.5" width="368" height="203"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="User name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aPp-Ua-URt">
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="368" id="3Xx-Cw-8lO"/>
+                                            <constraint firstAttribute="height" constant="50" id="xzt-CG-Ouf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="accountEditingChanged:" destination="wEI-DD-Xxh" eventType="editingChanged" id="c09-wd-K2y"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account must not be empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ol4-Kh-oUI">
+                                        <rect key="frame" x="0.0" y="70" width="368" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEr-vD-5Tp">
+                                        <rect key="frame" x="0.0" y="111.5" width="368" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="368" id="cDq-TK-yAJ"/>
+                                            <constraint firstAttribute="height" constant="50" id="nWy-Eg-i0T"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <connections>
+                                            <action selector="passwordEditingChanged:" destination="wEI-DD-Xxh" eventType="editingChanged" id="9lL-uh-wEc"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password must not be empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rim-16-WLY">
+                                        <rect key="frame" x="0.0" y="181.5" width="368" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="dfl-nV-uFk">
+                                <rect key="frame" x="317" y="891.5" width="200" height="129"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWn-vw-wxM">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Qea-CR-OuW"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="tWr-K9-QPA"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemIndigoColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign In">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onSubmitBtnTapped:" destination="wEI-DD-Xxh" eventType="touchUpInside" id="qkP-xm-s8U"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yR-qR-UXH">
+                                        <rect key="frame" x="0.0" y="79" width="200" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="R6w-5b-FtB"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="adg-hR-ON6"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign Up">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nqG-m6-dE4"/>
+                        <color key="backgroundColor" red="0.086274509803921567" green="0.086274509803921567" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gw8-ts-LCQ" firstAttribute="centerX" secondItem="0Pg-9u-spH" secondAttribute="centerX" id="3qi-Nk-Ohc"/>
+                            <constraint firstItem="Tqp-qZ-wfD" firstAttribute="trailing" secondItem="nqG-m6-dE4" secondAttribute="trailing" id="48q-Rw-1O0"/>
+                            <constraint firstItem="dfl-nV-uFk" firstAttribute="top" secondItem="umQ-zY-qP1" secondAttribute="bottom" constant="48" id="Ojf-iU-BWp"/>
+                            <constraint firstItem="umQ-zY-qP1" firstAttribute="top" secondItem="gw8-ts-LCQ" secondAttribute="bottom" constant="38" id="edA-Pz-rmW"/>
+                            <constraint firstItem="dfl-nV-uFk" firstAttribute="centerX" secondItem="0Pg-9u-spH" secondAttribute="centerX" id="iyI-ja-2mp"/>
+                            <constraint firstItem="Tqp-qZ-wfD" firstAttribute="top" secondItem="0Pg-9u-spH" secondAttribute="top" id="nOL-Kh-KQ5"/>
+                            <constraint firstItem="umQ-zY-qP1" firstAttribute="centerX" secondItem="0Pg-9u-spH" secondAttribute="centerX" id="v4n-5T-s9Z"/>
+                            <constraint firstItem="Tqp-qZ-wfD" firstAttribute="leading" secondItem="nqG-m6-dE4" secondAttribute="leading" id="v9L-Zf-a7V"/>
+                            <constraint firstItem="gw8-ts-LCQ" firstAttribute="top" secondItem="Tqp-qZ-wfD" secondAttribute="bottom" constant="58" id="zGo-1Z-ZXv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="accountMsgError" destination="Ol4-Kh-oUI" id="KOp-04-NZ8"/>
+                        <outlet property="accountTextField" destination="aPp-Ua-URt" id="Wjq-g2-P6K"/>
+                        <outlet property="passwordMsgError" destination="rim-16-WLY" id="Ag7-4V-wkX"/>
+                        <outlet property="passwordTextField" destination="zEr-vD-5Tp" id="tab-M7-qyi"/>
+                        <outlet property="submitBtn" destination="XWn-vw-wxM" id="QMZ-7e-FDm"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToMain" id="btJ-fM-ccd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HeG-vb-qFp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-458.27338129496405" y="0.0"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Battle_Ship" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="704" height="995.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f2n-vI-NWb">
-                                <rect key="frame" x="20" y="24" width="794" height="1150"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f2n-vI-NWb">
+                                <rect key="frame" x="20" y="24" width="664" height="1149"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Jr-WH-daP">
-                                        <rect key="frame" x="0.0" y="0.0" width="794" height="491"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="664" height="491"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="H4H-fn-Iqv">
-                                                <rect key="frame" x="0.0" y="0.0" width="794" height="81"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vA2-Mc-OrE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="0VU-RK-2gM"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ChX-3g-bD4">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="SH8-0v-rL1"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="maa-zl-jVC">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="vd4-53-MnC"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oyc-Yf-T32">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="yK0-3Q-slP"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Et-AB-xDU">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="hUm-An-K3C"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="upV-vA-QLI">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="fzo-nB-uHF"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rlH-yp-cAP">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="hjD-1J-fgi"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Weq-xh-MOb">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="ckm-8z-wuj"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pe4-p0-iB0">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="z1I-En-aQN"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PjI-Ou-b18">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="7eZ-1K-H93"/>
@@ -98,73 +226,73 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="JoE-Fw-9AH">
-                                                <rect key="frame" x="0.0" y="82" width="794" height="81"/>
+                                                <rect key="frame" x="0.0" y="82" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jmb-k7-SlT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="mPT-6k-w11"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="red-Zf-Jou">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="12g-nu-K5f"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fp7-D9-uwb">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Wmr-VQ-ZEp"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pgr-7b-VJK">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="pKl-Nm-r0X"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUO-gU-8cP">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="qHr-53-c6i"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hYh-uZ-CB1">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="6e8-za-Zb9"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GI9-3t-O6N">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="JgY-Zk-qBG"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zEB-In-jCh">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="99I-eh-jOv"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQb-a6-KfM">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="na8-3c-8b9"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lve-Y2-egH">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Adb-52-RLj"/>
@@ -173,73 +301,73 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="qN1-b9-Qp5">
-                                                <rect key="frame" x="0.0" y="164" width="794" height="81"/>
+                                                <rect key="frame" x="0.0" y="164" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8WY-MY-g0R">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Vs2-PW-UvD"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HdG-Wy-Xlq">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="9Gm-pf-SqQ"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XSf-a5-kV8">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="NLo-tu-VPv"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vsY-eP-bdj">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="rEp-Nx-LHB"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fs2-fQ-IzA">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="ULX-ER-bPh"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SjD-BM-Ubu">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="zGl-ux-nfC"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A19-PK-mnQ">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Eo6-eb-jek"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m5y-oy-ttP">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="25y-ap-dG0"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ilv-Tc-cdz">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="oTF-Ch-4j1"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="avS-cH-9WI">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Hht-IV-z3e"/>
@@ -248,73 +376,73 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="vrj-0t-qhs">
-                                                <rect key="frame" x="0.0" y="246" width="794" height="81"/>
+                                                <rect key="frame" x="0.0" y="246" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z3o-lX-l01">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="i3S-tO-zpf"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gUy-3q-hpf">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="qnG-rP-nhh"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xeE-Rp-b5q">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="5zg-IR-Pbm"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HS7-g9-2Uc">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="eCV-JF-fan"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Qe-i4-AtD">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="ZUk-UA-ycd"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bkl-TW-VFr">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="3n7-KL-Jo6"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B9r-b5-pTG">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="MUf-E1-W6t"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VrS-cJ-rrF">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Lwl-eb-Ptm"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zh2-Zo-8P1">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Jv7-sg-zMJ"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vix-yo-WSV">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="vph-IV-TgD"/>
@@ -323,73 +451,73 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="GKN-Nb-P5E">
-                                                <rect key="frame" x="0.0" y="328" width="794" height="81"/>
+                                                <rect key="frame" x="0.0" y="328" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3RU-hK-s9d">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="52I-3p-jf0"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oz7-QH-5rk">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="rKV-vw-gAj"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aCM-hR-GWE">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Q4k-r2-f7l"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2bg-6b-VWO">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="jTX-XI-yDA"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DHz-f3-6oH">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="8JX-MV-f80"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zas-rO-pl2">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="qZE-D8-Kxn"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TD1-rX-Hcl">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="D9Q-xf-HfO"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rv3-zh-Myi">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="p1V-RI-ZQK"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lix-tP-R1Z">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="b1w-cN-QZ7"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZbN-3k-rxf">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Qp9-4C-tNE"/>
@@ -398,73 +526,73 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="b4Y-96-MUZ">
-                                                <rect key="frame" x="0.0" y="410" width="794" height="81"/>
+                                                <rect key="frame" x="0.0" y="410" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iGc-cZ-b1S">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="dNo-0m-Pkr"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eiy-YG-NEI">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="ovK-1j-4UZ"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zaW-o6-NQp">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="V1d-ep-QSU"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hUt-J6-joJ">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="kU2-hu-B8H"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4xC-Q6-viW">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="lcv-Oh-wfq"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7xB-PI-9qq">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="i5s-0H-MNi"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZAl-Yw-avD">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="r6l-1u-q0N"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xWI-oW-omn">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="5gt-6G-a9Z"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NHq-gw-aTn">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Bne-n6-JhL"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TiM-xJ-Sbm">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="iQm-ZG-maL"/>
@@ -480,76 +608,76 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="gCG-RL-fuX">
-                                        <rect key="frame" x="0.0" y="506" width="794" height="492"/>
+                                        <rect key="frame" x="0.0" y="506" width="664" height="491"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="5BT-6X-kFN">
-                                                <rect key="frame" x="0.0" y="0.0" width="794" height="81"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0DR-X3-v0s">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="kML-gu-GUQ"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4bH-47-SVX">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="MGq-h1-JUg"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DZo-VL-64C">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="gDO-p6-MvM"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sHj-Fe-zwK">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="5rd-UK-7oK"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CNF-3c-lKZ">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="KEi-xW-dnx"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dm3-CJ-Q14">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="qvA-VI-fcd"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xSz-cn-WbO">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="VqE-ee-yYu"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iQA-QG-xjp">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="ygo-Ep-abz"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dfL-9L-auN">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="bH5-Ww-Ab2"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QyG-uL-tp2">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="GS4-NE-3sH"/>
@@ -558,73 +686,73 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="9KN-qP-nuo">
-                                                <rect key="frame" x="0.0" y="82" width="794" height="81.5"/>
+                                                <rect key="frame" x="0.0" y="82" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WdV-Ff-uSl">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="uyQ-e7-z9F"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rfx-hq-LZh">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="J4P-sr-kMR"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AHE-Ex-Yxb">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Nud-Rl-LY2"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-Nd-jUG">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="G1x-gF-pcX"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B5G-p5-Het">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Rph-nx-PgC"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uhz-Ko-paU">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="ZIb-oh-O7m"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8RO-6a-c3U">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="smq-BA-Zqw"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jiE-8b-0Xs">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="vmY-wT-LLY"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vqb-5L-1uA">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Shl-8y-lHe"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8YB-EC-r0X">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="NJp-v4-ams"/>
@@ -633,73 +761,73 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ydO-6t-e8t">
-                                                <rect key="frame" x="0.0" y="164.5" width="794" height="81"/>
+                                                <rect key="frame" x="0.0" y="164" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bcW-F1-K35">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="tBw-zC-afR"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sda-4H-1lJ">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Jmu-1y-4a6"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gNV-Zy-pmq">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="e7a-D4-NRx"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yfS-6K-RLM">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="boz-of-XmA"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F54-YD-Uy7">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="oUr-91-7Js"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5GR-Kr-vZJ">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="VJq-fe-vFp"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Fg-nb-ZBx">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="euR-Xi-ecg"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Inw-O7-OCe">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="KdW-zF-9aD"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qt0-6i-P4b">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Vdd-CM-EwO"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iy1-lk-6IA">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="olv-VT-GVP"/>
@@ -708,73 +836,73 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="jZd-EA-cgM">
-                                                <rect key="frame" x="0.0" y="246.5" width="794" height="81"/>
+                                                <rect key="frame" x="0.0" y="246" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fcM-8A-713">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Sx0-8b-4jA"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cfU-Ga-yh2">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="RKA-I8-veG"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mn3-SZ-d9t">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="yGq-tf-MCR"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KUx-a5-mog">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="6hX-T9-tBY"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u36-xw-ehi">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="y9D-2D-Dve"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="93A-DO-gHT">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Fg8-su-4Wc"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S1F-DU-SVN">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="8OO-Fx-MTd"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z9x-kQ-Fwo">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="kG2-as-0Ha"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V0C-f0-VBA">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="yoQ-kF-dYw"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DYp-Ks-b1H">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="ryx-Y5-xIP"/>
@@ -783,73 +911,73 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aEt-0o-Bvh">
-                                                <rect key="frame" x="0.0" y="328.5" width="794" height="81.5"/>
+                                                <rect key="frame" x="0.0" y="328" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M85-N4-0tq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="O5z-Dn-LTA"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TGt-ab-e3c">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="0z7-rj-kfm"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ljl-XT-L5T">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="gTg-ww-Axa"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lZX-qu-Clm">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="r9m-60-s52"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1T0-Xe-5bM">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="bxL-kf-EQo"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ol5-DG-xjH">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="m6Z-cS-Tgm"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zqB-mU-qdD">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="gR5-AS-X79"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBu-og-OEc">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="DfH-Sp-7N1"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="28Q-gP-ma7">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Xwe-Wv-jll"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBh-xS-AAl">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="lkv-sk-giI"/>
@@ -858,73 +986,73 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="rbQ-GG-FsK">
-                                                <rect key="frame" x="0.0" y="411" width="794" height="81"/>
+                                                <rect key="frame" x="0.0" y="410" width="664" height="81"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eIh-0i-2rr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="Ax3-5b-eKf"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zSk-lI-V9J">
-                                                        <rect key="frame" x="79.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="66.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="eAl-ny-nZj"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LoF-PA-cxY">
-                                                        <rect key="frame" x="159" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="133" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="v47-wM-x2M"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EVs-fF-ld6">
-                                                        <rect key="frame" x="238" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="199" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="kim-Gy-v7f"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zyw-Im-Zvo">
-                                                        <rect key="frame" x="317.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="265.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="hyC-1a-j6M"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ovO-5j-k7s">
-                                                        <rect key="frame" x="397" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="332" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="178-ff-E5Z"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZDz-Nz-KmJ">
-                                                        <rect key="frame" x="476.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="398.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="eKb-X9-oQM"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Iy-Fy-fWp">
-                                                        <rect key="frame" x="556" y="0.0" width="79" height="81"/>
+                                                        <rect key="frame" x="465" y="0.0" width="66" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="4lT-hx-zzy"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Lx-3u-JgM">
-                                                        <rect key="frame" x="635" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="531" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="SNh-3v-AaQ"/>
                                                         </constraints>
                                                     </imageView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VTc-Eq-GWN">
-                                                        <rect key="frame" x="714.5" y="0.0" width="79.5" height="81"/>
+                                                        <rect key="frame" x="597.5" y="0.0" width="66.5" height="81"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="81" id="8nk-ip-DpX"/>
@@ -934,8 +1062,8 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJ1-d4-NyD">
-                                        <rect key="frame" x="0.0" y="1013" width="794" height="137"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJ1-d4-NyD">
+                                        <rect key="frame" x="0.0" y="1012" width="664" height="137"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ShipBattleshipHull" translatesAutoresizingMaskIntoConstraints="NO" id="jLJ-2p-SxA">
                                                 <rect key="frame" x="0.0" y="1" width="69" height="128"/>
@@ -990,6 +1118,7 @@
                             <constraint firstItem="f2n-vI-NWb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wNS-Qr-wwz"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="K52-pA-ZOw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -997,6 +1126,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="-BS-_Hero_Image_-_Desktop" width="533" height="333"/>
         <image name="ShipBattleshipHull" width="31" height="209"/>
         <image name="ShipCarrierHull" width="57" height="189"/>
         <image name="ShipCruiserHull" width="23" height="128"/>
@@ -1008,6 +1138,12 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
