@@ -960,6 +960,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ShipSubMarineHull" translatesAutoresizingMaskIntoConstraints="NO" id="6mG-I4-zbO">
                                                 <rect key="frame" x="405" y="1" width="85" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -990,6 +991,15 @@
                             <constraint firstItem="f2n-vI-NWb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wNS-Qr-wwz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ship1" destination="jLJ-2p-SxA" id="2Ql-y5-Z2p"/>
+                        <outlet property="ship2" destination="AGf-dX-xfX" id="vPs-Z7-oli"/>
+                        <outlet property="ship3" destination="4hb-ok-YQc" id="sKi-lF-1RP"/>
+                        <outlet property="ship4" destination="Xan-hC-lgG" id="wwr-9r-VLO"/>
+                        <outlet property="ship5" destination="MBm-by-a1j" id="srQ-W5-g5q"/>
+                        <outlet property="ship6" destination="6mG-I4-zbO" id="T09-xy-3vn"/>
+                        <outlet property="yourSeaArea" destination="gCG-RL-fuX" id="car-xE-nCa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
