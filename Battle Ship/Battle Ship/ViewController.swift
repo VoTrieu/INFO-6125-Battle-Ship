@@ -134,9 +134,11 @@ class ViewController: UIViewController {
         let imgView = self.view.viewWithTag(tag) as? UIImageView
         if(shipContainedCells.contains(tag)){
             imgView?.image = UIImage(named: "explosion2")
+            playAudioTrack(fileName: "explosion3")
             return
         }
         imgView?.image = UIImage(named: "waterSplash2")
+        playAudioTrack(fileName: "splash2")
     }
     
     func setTapGestureForImageViews(){
@@ -153,18 +155,20 @@ class ViewController: UIViewController {
         let imgView = sender.view as? UIImageView
         if(shipsForMachine.contains(tag!)){
             imgView?.image = UIImage(named: "explosion2")
+            playAudioTrack(fileName: "explosion3")
         }else{
             imgView?.image = UIImage(named: "waterSplash2")
+            playAudioTrack(fileName: "splash2")
         }
         
         // Machine attach user after 1 second
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.machineAttack()
         }
     }
 
 
-    private func playAudioTrack(){     
+    private func playAudioTrack(fileName:String){
         if let player = player, player.isPlaying {
             // stop playback
             player.stop()           
@@ -172,7 +176,7 @@ class ViewController: UIViewController {
             // set up the player and play
             
             // setup the url
-            let urlString = Bundle.main.path(forResource: "splash1", ofType: "mp3")
+            let urlString = Bundle.main.path(forResource: fileName, ofType: "mp3")
             
             do{            
                 try AVAudioSession.sharedInstance().setMode(.default)
