@@ -7,7 +7,7 @@
 
 import UIKit
 import FirebaseAuth
-
+import FirebaseDatabase
 
 
 
@@ -60,18 +60,32 @@ class LoginViewController: UIViewController {
         /**Initial state**/
         submitBtn.isEnabled = false;
         hideAllErrorMsg(state:true);
+        
+        var ref: DatabaseReference!
+
+        ref = Database.database().reference()
+        
+        ref.child("users/").queryOrdered(byChild: "score").queryLimited(toLast: 3).observe(.value, with: { snapshot in
+            for child in (snapshot.children.allObjects as! [DataSnapshot]).reversed(){
+                print(child.childSnapshot(forPath: "username").value! as! String)
+            }
+      })
+
+
     }
     
     /**When user typing account, the error will disappear**/
     @IBAction func accountEditingChanged(_ sender: UITextField) {
         accountMsgError.alpha = accountTextField.text == "" ? 1.0 : 0.0;
         changeSubmitBtn();
+
     }
     
     /**When user typing password, the error will disappear**/
     @IBAction func passwordEditingChanged(_ sender: UITextField) {
         passwordMsgError.alpha = passwordTextField.text == "" ? 1.0 : 0.0;
         changeSubmitBtn();
+        
     }
     
     /**When submit button is tapped*/

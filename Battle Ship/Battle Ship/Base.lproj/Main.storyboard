@@ -211,7 +211,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wwY-PR-wW8">
-                                <rect key="frame" x="233" y="630" width="368" height="314.5"/>
+                                <rect key="frame" x="233" y="630.5" width="368" height="314.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="User Nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPC-Vm-px4">
                                         <rect key="frame" x="0.0" y="0.0" width="368" height="50"/>
