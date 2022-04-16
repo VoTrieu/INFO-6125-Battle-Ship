@@ -20,15 +20,17 @@ class ViewController: UIViewController {
     private var shipContainedCells:[Int] = []
     private var passedCells: [Int] = []
     private var shipsForMachine:[Int] = []
+    private var attackedCells:[Int] = []
     private var draggedShipTag:Int = 0
     private let tolerance = 50
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //implement drap and drop the ships
         let dragInteraction = UIDragInteraction(delegate: self)
         let dropInteraction = UIDropInteraction(delegate: self)
         let ships = [ship1, ship2, ship3, ship4, ship5, ship6]
-        
         yourSeaArea.addInteraction(dropInteraction)
         for ship in ships {
             ship?.addInteraction(dragInteraction)
@@ -39,6 +41,7 @@ class ViewController: UIViewController {
         }
         
         arrangeShipsForMachine()
+        setTapGestureForImageViews()
     }
 
     @objc func draggingShips (_ sender: UIPanGestureRecognizer){
@@ -47,6 +50,7 @@ class ViewController: UIViewController {
         if(draggedShipTag != 0 && draggedShipTag != draggedShip.tag){
             shipContainedCells.append(contentsOf: passedCells)
         }
+        
         draggedShipTag = draggedShip.tag
         
         let point = sender.location(in: yourSeaArea)
@@ -57,6 +61,11 @@ class ViewController: UIViewController {
             draggedShip.center = newPoint
         }
         getSelectedCells(shipPoint: point)
+    }
+    
+    
+    @IBAction func startTheGame(_ sender: UIButton) {
+        machineAttack()
     }
     
     func getSelectedCells(shipPoint: CGPoint){
@@ -83,12 +92,62 @@ class ViewController: UIViewController {
     
     func arrangeShipsForMachine (){
         shipsForMachine = []
-        repeat{
+        while (shipsForMachine.count < 12){
             let randomInt = Int.random(in: 201...260)
             if(!shipsForMachine.contains(randomInt)){
                 shipsForMachine.append(randomInt)
             }
-        }while shipsForMachine.count < 12
+        }
+    }
+    
+    func machineAttack(){
+        
+        //add position of the last ship'
+        addPositionOfTheLastShip()
+        
+        var validCell = false
+        while(validCell == false) {
+            let randomInt = Int.random(in: 101...160)
+            if(!attackedCells.contains(randomInt)){
+                attackedCells.append(randomInt)
+                checkMachineAttackResult(tag: randomInt)
+                validCell = true
+            }
+        }
+    }
+    
+    func addPositionOfTheLastShip(){
+        if(passedCells.count == 2){
+            shipContainedCells.append(contentsOf: passedCells)
+            passedCells = []
+        }
+    }
+    
+    func checkMachineAttackResult(tag: Int){
+        let imgView = self.view.viewWithTag(tag) as? UIImageView
+        if(shipContainedCells.contains(tag)){
+            imgView?.backgroundColor = .red
+            return
+        }
+        imgView?.backgroundColor = .blue
+    }
+    
+    func setTapGestureForImageViews(){
+        for tag in 201...260 {
+            let imgView = self.view.viewWithTag(tag) as? UIImageView
+            let tapEvent = UITapGestureRecognizer(target: self, action: #selector(self.userAttack))
+            imgView?.isUserInteractionEnabled = true
+            imgView?.addGestureRecognizer(tapEvent)
+        }
+    }
+    
+    @objc func userAttack(_ sender: UITapGestureRecognizer){
+        let tag = sender.view?.tag
+        if(shipsForMachine.contains(tag!)){
+            sender.view?.backgroundColor = .red
+            return
+        }
+        sender.view?.backgroundColor = .blue
     }
 
 }

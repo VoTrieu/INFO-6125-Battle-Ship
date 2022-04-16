@@ -962,8 +962,30 @@
                                                 <rect key="frame" x="164" y="0.0" width="79" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="rrN-ar-yRF">
+                                                <rect key="frame" x="675" y="35" width="111" height="67"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="111" id="xz8-bo-jAz"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Start">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="strokeColor" red="0.23921568630000001" green="0.61960784310000006" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name=".SFUI-Semibold" family=".AppleSystemUIFont" pointSize="30"/>
+                                                    <color key="baseBackgroundColor" red="0.23921568630000001" green="0.61960784310000006" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="startTheGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4iF-Py-78S"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="rrN-ar-yRF" secondAttribute="bottom" constant="35" id="OEH-ap-ScQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="rrN-ar-yRF" secondAttribute="trailing" constant="8" id="Zhy-Be-DK9"/>
+                                            <constraint firstItem="rrN-ar-yRF" firstAttribute="top" secondItem="GJ1-d4-NyD" secondAttribute="top" constant="35" id="aSD-e5-Xeh"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
