@@ -30,6 +30,9 @@ class ViewController: UIViewController {
     private var attackedCells:[Int] = []
     private var draggedShipTag:Int = 0
     private let tolerance = 50
+    private var isShooting = false
+    private var isGameStarted = false
+    private var numberOfMovedShips = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +55,15 @@ class ViewController: UIViewController {
 
     @objc func draggingShips (_ sender: UIPanGestureRecognizer){
         let draggedShip = sender.view!
+        let isNewShip = draggedShipTag != draggedShip.tag
         
-        if(draggedShipTag != 0 && draggedShipTag != draggedShip.tag){
+        //count the moved ships
+        if(isNewShip){
+            numberOfMovedShips += 1
+        }
+        
+        //collect selected cells
+        if(draggedShipTag != 0 && isNewShip){
             shipContainedCells.append(contentsOf: passedCells)
         }
         
@@ -71,8 +81,12 @@ class ViewController: UIViewController {
     
     
     @IBAction func startTheGame(_ sender: UIButton) {
-//        machineAttack()
+        let isUserReady = checkIfUserIsReady()
+        if(!isUserReady){
+            return
+        }
         arrangeShipsForMachine()
+        isGameStarted = true
     }
     
     func getSelectedCells(shipPoint: CGPoint){
@@ -90,6 +104,7 @@ class ViewController: UIViewController {
             let imgY = container!.center.y
             if(imgX > startX && imgX < endX && imgY > startY && imgY < endY){
                 passedCells.append(imgView.tag)
+                // One ship only be placed on 2 cells
                 if(passedCells.count > 2){
                     passedCells.remove(at: 0)
                 }
@@ -108,7 +123,7 @@ class ViewController: UIViewController {
     }
     
     func machineAttack(){
-        
+        isShooting = true
         //add position of the last ship'
         addPositionOfTheLastShip()
         
@@ -132,6 +147,7 @@ class ViewController: UIViewController {
     
     func checkMachineAttackResult(tag: Int){
         let imgView = self.view.viewWithTag(tag) as? UIImageView
+        isShooting = false
         if(shipContainedCells.contains(tag)){
             imgView?.image = UIImage(named: "explosion2")
             playAudioTrack(fileName: "explosion3")
@@ -151,6 +167,10 @@ class ViewController: UIViewController {
     }
     
     @objc func userAttack(_ sender: UITapGestureRecognizer){
+        if(isShooting || !isGameStarted){
+            return
+        }
+        isShooting = true
         let tag = sender.view?.tag
         let imgView = sender.view as? UIImageView
         if(shipsForMachine.contains(tag!)){
@@ -163,8 +183,20 @@ class ViewController: UIViewController {
         
         // Machine attach user after 1 second
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.isShooting = false
             self.machineAttack()
         }
+    }
+    
+    func checkIfUserIsReady() -> Bool{
+        if(numberOfMovedShips < 6){
+            let dialogMessage = UIAlertController(title: "Information", message: "You have not finished arranging your ships", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+             dialogMessage.addAction(ok)
+            self.present(dialogMessage, animated: true, completion: nil)
+            return false
+        }
+        return true
     }
 
 
