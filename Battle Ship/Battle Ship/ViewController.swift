@@ -16,6 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var ship5: UIImageView!
     @IBOutlet weak var ship6: UIImageView!
     @IBOutlet weak var yourSeaArea: UIStackView!
+    
+    private var shipContainedCells:[UIImageView] = []
+    private var passedCells: [UIImageView] = []
+    private var draggedShipTag:Int = 0
+    private let tolerance = 50
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let dragInteraction = UIDragInteraction(delegate: self)
@@ -34,7 +40,13 @@ class ViewController: UIViewController {
 
     @objc func draggingShips (_ sender: UIPanGestureRecognizer){
         let draggedShip = sender.view!
-        let tolerance = 50
+        
+        if(draggedShipTag != 0 && draggedShipTag != draggedShip.tag){
+            shipContainedCells.append(contentsOf: passedCells)
+        }
+        draggedShipTag = draggedShip.tag
+        
+        let translation = sender.translation(in: sender.view)
         let point = sender.location(in: yourSeaArea)
         let dx = point.x
         let dy = point.y - yourSeaArea.frame.height
@@ -42,10 +54,30 @@ class ViewController: UIViewController {
         if(dy > (-yourSeaArea.frame.height + CGFloat(tolerance)) && (dx > 20 && dx < yourSeaArea.frame.width)){
             draggedShip.center = newPoint
         }
-        print(newPoint)
+        getSelectedCells(shipPoint: point)
     }
     
-    
+    func getSelectedCells(shipPoint: CGPoint){
+        let shipWidth = 79.0 / 2
+        let shipHeight = 128.0 / 2
+        let startX = shipPoint.x - shipWidth
+        let startY = shipPoint.y - shipHeight
+        
+        let endX = shipPoint.x + shipWidth
+        let endY = shipPoint.y + shipHeight
+        for tag in 101...160 {
+            let imgView = self.view.viewWithTag(tag) as! UIImageView
+            let container = imgView.superview
+            let imgX = imgView.center.x
+            let imgY = container!.center.y
+            if(imgX > startX && imgX < endX && imgY > startY && imgY < endY){
+                passedCells.append(imgView)
+                if(passedCells.count > 2){
+                    passedCells.remove(at: 0)
+                }
+            }
+        }
+    }
 
 }
 
