@@ -26,6 +26,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var ship6: UIImageView!
     @IBOutlet weak var yourSeaArea: UIStackView!
     
+    private var ships: [UIImageView] = []
+    private var originalLocationOfShips: [CGPoint] = []
+    private let machineSeaAreaTags = 201...260
+    private let userSeaAreaTags = 101...160
     private var shipContainedCells:[Int] = []
     private var passedCells: [Int] = []
     private var shipsForMachine:[Int] = []
@@ -35,6 +39,9 @@ class ViewController: UIViewController {
     private var isShooting = false
     private var isGameStarted = false
     private var numberOfMovedShips = 0
+    private var userOnTargetShoots = 0
+    private var userMissingShoots = 0
+    private var machineOnTargetShoots = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,18 +50,21 @@ class ViewController: UIViewController {
         //implement drap and drop the ships
         let dragInteraction = UIDragInteraction(delegate: self)
         let dropInteraction = UIDropInteraction(delegate: self)
-        let ships = [ship1, ship2, ship3, ship4, ship5, ship6]
+        
+        ships = [ship1, ship2, ship3, ship4, ship5, ship6]
         yourSeaArea.addInteraction(dropInteraction)
         for ship in ships {
-            ship?.addInteraction(dragInteraction)
-            ship?.isUserInteractionEnabled = true
-            
+            ship.addInteraction(dragInteraction)
+            ship.isUserInteractionEnabled = true
+            originalLocationOfShips.append(ship.center)
             let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(draggingShips))
-            ship?.addGestureRecognizer(gestureRecognizer)
+            ship.addGestureRecognizer(gestureRecognizer)
         }
         
         setTapGestureForImageViews()
-        playAudioTrack(fileName: "BattleThemeIVLooping")
+        
+        //play background music
+//        playAudioTrack(fileName: "BattleThemeIVLooping")
     }
 
     @objc func draggingShips (_ sender: UIPanGestureRecognizer){
@@ -91,6 +101,8 @@ class ViewController: UIViewController {
         }
         arrangeShipsForMachine()
         isGameStarted = true
+        player?.stop()
+        showAlert(title: "Information", message: "Let do attack the Machine first!"){}
     }
     
     func getSelectedCells(shipPoint: CGPoint){
@@ -101,16 +113,27 @@ class ViewController: UIViewController {
         
         let endX = shipPoint.x + shipWidth
         let endY = shipPoint.y + shipHeight
-        for tag in 101...160 {
+        for tag in userSeaAreaTags {
             let imgView = self.view.viewWithTag(tag) as! UIImageView
             let container = imgView.superview
             let imgX = imgView.center.x
             let imgY = container!.center.y
             if(imgX > startX && imgX < endX && imgY > startY && imgY < endY){
+                if(passedCells.contains(imgView.tag)){
+                    return
+                }
+                
                 passedCells.append(imgView.tag)
+                
                 // One ship only be placed on 2 cells
                 if(passedCells.count > 2){
                     passedCells.remove(at: 0)
+                    
+                    // correct selected cells in column
+                    let gapCellValue = passedCells[1] - passedCells[0]
+                    if(gapCellValue != 10){
+                        passedCells[0] = passedCells[1] - 10
+                    }
                 }
             }
         }
@@ -119,7 +142,7 @@ class ViewController: UIViewController {
     func arrangeShipsForMachine (){
         shipsForMachine = []
         while (shipsForMachine.count < 12){
-            let randomInt = Int.random(in: 201...260)
+            let randomInt = Int.random(in: machineSeaAreaTags)
             if(!shipsForMachine.contains(randomInt)){
                 shipsForMachine.append(randomInt)
             }
@@ -133,7 +156,7 @@ class ViewController: UIViewController {
         
         var validCell = false
         while(validCell == false) {
-            let randomInt = Int.random(in: 101...160)
+            let randomInt = Int.random(in: userSeaAreaTags)
             if(!attackedCells.contains(randomInt)){
                 attackedCells.append(randomInt)
                 checkMachineAttackResult(tag: randomInt)
@@ -155,14 +178,31 @@ class ViewController: UIViewController {
         if(shipContainedCells.contains(tag)){
             imgView?.image = UIImage(named: "explosion2")
             playAudioTrack(fileName: "explosion3")
+            machineOnTargetShoots += 1
+            checkIfEndGame()
             return
         }
         imgView?.image = UIImage(named: "waterSplash2")
         playAudioTrack(fileName: "splash2")
     }
     
+    func checkIfEndGame(){
+        if(machineOnTargetShoots == 12){
+            showAlert(title: "Information", message: "Oh No! The machine won!. Let's try again!"){
+                self.resetGame()
+            }
+            return
+        }
+        
+        if(userOnTargetShoots == 12){
+            showAlert(title: "Information", message: "Congratulation! You are the winner, and you gained 100 scores. Let's try again!"){
+                self.resetGame()
+            }
+        }
+    }
+    
     func setTapGestureForImageViews(){
-        for tag in 201...260 {
+        for tag in machineSeaAreaTags {
             let imgView = self.view.viewWithTag(tag) as? UIImageView
             let tapEvent = UITapGestureRecognizer(target: self, action: #selector(self.userAttack))
             imgView?.isUserInteractionEnabled = true
@@ -180,13 +220,15 @@ class ViewController: UIViewController {
         if(shipsForMachine.contains(tag!)){
             imgView?.image = UIImage(named: "explosion2")
             playAudioTrack(fileName: "explosion3")
+            userOnTargetShoots += 1
+            checkIfEndGame()
         }else{
             imgView?.image = UIImage(named: "waterSplash2")
             playAudioTrack(fileName: "splash2")
         }
         
-        // Machine attach user after 3 second
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        // Machine attach user after 2 second
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.isShooting = false
             self.machineAttack()
         }
@@ -194,28 +236,46 @@ class ViewController: UIViewController {
     
     func checkIfUserIsReady() -> Bool{
         if(numberOfMovedShips < 6){
-            showAlert(title: "Information", message: "You have not finished arranging your ships")
+            showAlert(title: "Information", message: "You have not finished arranging your ships"){}
             return false
         }
         return true
     }
     
-    func showAlert(title: String, message: String){
+    func showAlert(title: String, message: String, _handler: @escaping () -> Void){
         let dialogMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+            _handler()
+        })
          dialogMessage.addAction(ok)
         self.present(dialogMessage, animated: true, completion: nil)
     }
 
+    func resetGame(){
+        arrangeShipsForMachine()
+        userOnTargetShoots = 0
+        machineOnTargetShoots = 0
+        shipContainedCells = []
+        attackedCells = []
+        for tag in [userSeaAreaTags, machineSeaAreaTags].joined() {
+            let imgView = self.view.viewWithTag(tag) as? UIImageView
+            imgView?.image = nil
+        }
+        
+        for (index, ship) in ships.enumerated() {
+            ship.center = originalLocationOfShips[index]
+        }
+        
+    }
 
     private func playAudioTrack(fileName:String){
-        if let player = player, player.isPlaying {
-            // stop playback
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                player.stop()
-            }
-                      
-        }else{
+//        if let player = player, player.isPlaying {
+//            // stop playback
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                player.stop()
+//            }
+//
+//        }else{
             // set up the player and play
             
             // setup the url
@@ -240,7 +300,7 @@ class ViewController: UIViewController {
             catch{
                 print("error occured")
             }
-        }
+//        }
     }
 
 }
@@ -248,11 +308,6 @@ class ViewController: UIViewController {
 extension ViewController: UIDragInteractionDelegate, UIDropInteractionDelegate{
     
     func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
-//        guard let image = ship6.image else { return [] }
-//
-//         let provider = NSItemProvider(object: image)
-//         let item = UIDragItem(itemProvider: provider)
-//         item.localObject = image
 
          return []
     }
