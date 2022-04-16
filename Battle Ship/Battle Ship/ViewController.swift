@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 // import AVFoundation
 import AVFoundation
@@ -13,6 +14,7 @@ import AVFoundation
 
 
 class ViewController: UIViewController {
+    var userEmail: String?
     
     var player: AVAudioPlayer?
 
@@ -36,8 +38,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        print(userEmail ?? "Unknow")
+                
         //implement drap and drop the ships
         let dragInteraction = UIDragInteraction(delegate: self)
         let dropInteraction = UIDropInteraction(delegate: self)
