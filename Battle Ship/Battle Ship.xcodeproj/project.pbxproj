@@ -27,6 +27,7 @@
 		FB52821D280946CB0036A6C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB52821B280946CB0036A6C5 /* Main.storyboard */; };
 		FB52821F280946CC0036A6C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB52821E280946CC0036A6C5 /* Assets.xcassets */; };
 		FB528222280946CC0036A6C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB528220280946CC0036A6C5 /* LaunchScreen.storyboard */; };
+		FB52822A280B20F60036A6C5 /* BattleThemeIVLooping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB528229280B20F60036A6C5 /* BattleThemeIVLooping.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FB52821E280946CC0036A6C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB528221280946CC0036A6C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB528223280946CC0036A6C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB528229280B20F60036A6C5 /* BattleThemeIVLooping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BattleThemeIVLooping.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				0BDE481F2809E400000632E6 /* splash1.mp3 */,
 				0BDE48212809E400000632E6 /* splash2.mp3 */,
+				FB528229280B20F60036A6C5 /* BattleThemeIVLooping.mp3 */,
 				0BDE48202809E400000632E6 /* splash3.mp3 */,
 				0BDE48222809E400000632E6 /* splash4.mp3 */,
 				0BDE48112809E1D7000632E6 /* explosion1.mp3 */,
@@ -180,6 +183,7 @@
 				0BDE481A2809E1D7000632E6 /* explosion2.mp3 in Resources */,
 				0BDE48152809E1D7000632E6 /* explosion8.mp3 in Resources */,
 				0BDE481C2809E1D7000632E6 /* explosion5.mp3 in Resources */,
+				FB52822A280B20F60036A6C5 /* BattleThemeIVLooping.mp3 in Resources */,
 				FB52821F280946CC0036A6C5 /* Assets.xcassets in Resources */,
 				0BDE48252809E400000632E6 /* splash2.mp3 in Resources */,
 				0BDE48232809E400000632E6 /* splash1.mp3 in Resources */,

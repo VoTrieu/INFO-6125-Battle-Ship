@@ -37,6 +37,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //implement drap and drop the ships
         let dragInteraction = UIDragInteraction(delegate: self)
         let dropInteraction = UIDropInteraction(delegate: self)
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
         }
         
         setTapGestureForImageViews()
+        playAudioTrack(fileName: "BattleThemeIVLooping")
     }
 
     @objc func draggingShips (_ sender: UIPanGestureRecognizer){
@@ -134,6 +136,7 @@ class ViewController: UIViewController {
                 attackedCells.append(randomInt)
                 checkMachineAttackResult(tag: randomInt)
                 validCell = true
+                isShooting = false
             }
         }
     }
@@ -147,7 +150,6 @@ class ViewController: UIViewController {
     
     func checkMachineAttackResult(tag: Int){
         let imgView = self.view.viewWithTag(tag) as? UIImageView
-        isShooting = false
         if(shipContainedCells.contains(tag)){
             imgView?.image = UIImage(named: "explosion2")
             playAudioTrack(fileName: "explosion3")
@@ -181,8 +183,8 @@ class ViewController: UIViewController {
             playAudioTrack(fileName: "splash2")
         }
         
-        // Machine attach user after 1 second
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        // Machine attach user after 3 second
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.isShooting = false
             self.machineAttack()
         }
@@ -207,7 +209,10 @@ class ViewController: UIViewController {
     private func playAudioTrack(fileName:String){
         if let player = player, player.isPlaying {
             // stop playback
-            player.stop()           
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                player.stop()
+            }
+                      
         }else{
             // set up the player and play
             
@@ -229,13 +234,11 @@ class ViewController: UIViewController {
                 }
 
                 player.play()
-                
             }
             catch{
                 print("error occured")
             }
         }
-        
     }
 
 }
