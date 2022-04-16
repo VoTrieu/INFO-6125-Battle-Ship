@@ -40,7 +40,6 @@ class ViewController: UIViewController {
             ship?.addGestureRecognizer(gestureRecognizer)
         }
         
-        arrangeShipsForMachine()
         setTapGestureForImageViews()
     }
 
@@ -65,7 +64,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func startTheGame(_ sender: UIButton) {
-        machineAttack()
+//        machineAttack()
+        arrangeShipsForMachine()
     }
     
     func getSelectedCells(shipPoint: CGPoint){
@@ -145,9 +145,14 @@ class ViewController: UIViewController {
         let tag = sender.view?.tag
         if(shipsForMachine.contains(tag!)){
             sender.view?.backgroundColor = .red
-            return
+        }else{
+            sender.view?.backgroundColor = .blue
         }
-        sender.view?.backgroundColor = .blue
+        
+        // Machine attach user after 1 second
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.machineAttack()
+        }
     }
 
 }
