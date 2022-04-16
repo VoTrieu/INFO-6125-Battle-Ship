@@ -190,13 +190,17 @@ class ViewController: UIViewController {
     
     func checkIfUserIsReady() -> Bool{
         if(numberOfMovedShips < 6){
-            let dialogMessage = UIAlertController(title: "Information", message: "You have not finished arranging your ships", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-             dialogMessage.addAction(ok)
-            self.present(dialogMessage, animated: true, completion: nil)
+            showAlert(title: "Information", message: "You have not finished arranging your ships")
             return false
         }
         return true
+    }
+    
+    func showAlert(title: String, message: String){
+        let dialogMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+         dialogMessage.addAction(ok)
+        self.present(dialogMessage, animated: true, completion: nil)
     }
 
 
