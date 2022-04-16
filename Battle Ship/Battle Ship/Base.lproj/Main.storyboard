@@ -305,6 +305,66 @@
             </objects>
             <point key="canvasLocation" x="-458" y="782"/>
         </scene>
+        <!--Top Players View Controller-->
+        <scene sceneID="5av-0G-CNz">
+            <objects>
+                <viewController id="H7h-ol-rMl" customClass="TopPlayersViewController" customModule="Battle_Ship" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NZy-p0-3C8">
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="-BS-_Hero_Image_-_Desktop" translatesAutoresizingMaskIntoConstraints="NO" id="XZp-2n-Lsl">
+                                <rect key="frame" x="0.0" y="0.0" width="834" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="kZb-2k-wNm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leaderboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuh-cZ-1qy">
+                                <rect key="frame" x="307.5" y="544" width="219" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dgs-4c-O4b">
+                                <rect key="frame" x="0.0" y="605" width="834" height="569"/>
+                                <color key="backgroundColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerStat" id="cjJ-f7-snb">
+                                        <rect key="frame" x="0.0" y="44.5" width="834" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cjJ-f7-snb" id="Bh2-EU-GKz">
+                                            <rect key="frame" x="0.0" y="0.0" width="834" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FlH-9i-bRv"/>
+                        <color key="backgroundColor" red="0.086274509803921567" green="0.086274509803921567" blue="0.094117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nuh-cZ-1qy" firstAttribute="top" secondItem="XZp-2n-Lsl" secondAttribute="bottom" constant="44" id="16I-zT-cNz"/>
+                            <constraint firstItem="Dgs-4c-O4b" firstAttribute="trailing" secondItem="FlH-9i-bRv" secondAttribute="trailing" id="3ko-Fq-O3M"/>
+                            <constraint firstItem="FlH-9i-bRv" firstAttribute="bottom" secondItem="Dgs-4c-O4b" secondAttribute="bottom" id="G47-bS-ZJz"/>
+                            <constraint firstItem="Dgs-4c-O4b" firstAttribute="leading" secondItem="FlH-9i-bRv" secondAttribute="leading" id="GHc-Lp-ABg"/>
+                            <constraint firstItem="XZp-2n-Lsl" firstAttribute="trailing" secondItem="FlH-9i-bRv" secondAttribute="trailing" id="GPV-Ih-Gz5"/>
+                            <constraint firstItem="Nuh-cZ-1qy" firstAttribute="leading" secondItem="FlH-9i-bRv" secondAttribute="leading" constant="307.5" id="MSn-kr-RLE"/>
+                            <constraint firstItem="FlH-9i-bRv" firstAttribute="trailing" secondItem="Nuh-cZ-1qy" secondAttribute="trailing" constant="307.5" id="Pfz-6b-oOb"/>
+                            <constraint firstItem="XZp-2n-Lsl" firstAttribute="top" secondItem="NZy-p0-3C8" secondAttribute="top" id="Rxc-jo-IGm"/>
+                            <constraint firstItem="XZp-2n-Lsl" firstAttribute="leading" secondItem="FlH-9i-bRv" secondAttribute="leading" id="jRc-pm-cYO"/>
+                            <constraint firstItem="Dgs-4c-O4b" firstAttribute="top" secondItem="Nuh-cZ-1qy" secondAttribute="bottom" constant="16" id="y2R-zX-293"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="leaderBoardTable" destination="Dgs-4c-O4b" id="57X-ZZ-BXG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O0Z-Ck-kAL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="250.35971223021585" y="787.9396984924623"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -1294,6 +1354,9 @@
             <point key="canvasLocation" x="236.69064748201441" y="0.0"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vB5-Wu-Zuj"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor"/>
     <resources>
         <image name="-BS-_Hero_Image_-_Desktop" width="533" height="333"/>

@@ -8,14 +8,31 @@
 import UIKit
 
 class TopPlayersViewController: UIViewController {
-
+    
+    @IBOutlet weak var leaderBoardTable: UITableView!
+    
+    private var players: [Player] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        loadMockData()
+        
+        leaderBoardTable.dataSource = self
+        
     }
     
 
+    private func loadTableData(){
+        
+    }
+    
+    private func loadMockData(){
+        players.append(Player(playerName: "Tien", hits: 24))
+        players.append(Player(playerName: "Trieu", hits: 20))
+        players.append(Player(playerName: "Dumidu", hits: 34))
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -26,4 +43,33 @@ class TopPlayersViewController: UIViewController {
     }
     */
 
+}
+
+extension TopPlayersViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return players.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = leaderBoardTable.dequeueReusableCell(withIdentifier: "playerStat", for: indexPath)
+        let item = players[indexPath.row]
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = item.playerName
+        content.secondaryText = String(item.hits)
+        
+        cell.contentConfiguration = content
+        
+        return cell
+        
+    }
+    
+}
+
+
+struct Player{
+    let playerName: String
+    let hits: Int
 }
