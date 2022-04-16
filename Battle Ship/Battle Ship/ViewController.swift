@@ -133,10 +133,10 @@ class ViewController: UIViewController {
     func checkMachineAttackResult(tag: Int){
         let imgView = self.view.viewWithTag(tag) as? UIImageView
         if(shipContainedCells.contains(tag)){
-            imgView?.backgroundColor = .red
+            imgView?.image = UIImage(named: "explosion2")
             return
         }
-        imgView?.backgroundColor = .blue
+        imgView?.image = UIImage(named: "waterSplash2")
     }
     
     func setTapGestureForImageViews(){
@@ -150,17 +150,18 @@ class ViewController: UIViewController {
     
     @objc func userAttack(_ sender: UITapGestureRecognizer){
         let tag = sender.view?.tag
+        let imgView = sender.view as? UIImageView
         if(shipsForMachine.contains(tag!)){
-            sender.view?.backgroundColor = .red
+            imgView?.image = UIImage(named: "explosion2")
         }else{
-            sender.view?.backgroundColor = .blue
+            imgView?.image = UIImage(named: "waterSplash2")
         }
         
         // Machine attach user after 1 second
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.machineAttack()
         }
-    
+    }
 
 
     private func playAudioTrack(){     
