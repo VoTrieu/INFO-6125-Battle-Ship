@@ -17,8 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var ship6: UIImageView!
     @IBOutlet weak var yourSeaArea: UIStackView!
     
-    private var shipContainedCells:[UIImageView] = []
-    private var passedCells: [UIImageView] = []
+    private var shipContainedCells:[Int] = []
+    private var passedCells: [Int] = []
+    private var shipsForMachine:[Int] = []
     private var draggedShipTag:Int = 0
     private let tolerance = 50
     
@@ -36,6 +37,8 @@ class ViewController: UIViewController {
             let gestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(draggingShips))
             ship?.addGestureRecognizer(gestureRecognizer)
         }
+        
+        arrangeShipsForMachine()
     }
 
     @objc func draggingShips (_ sender: UIPanGestureRecognizer){
@@ -46,7 +49,6 @@ class ViewController: UIViewController {
         }
         draggedShipTag = draggedShip.tag
         
-        let translation = sender.translation(in: sender.view)
         let point = sender.location(in: yourSeaArea)
         let dx = point.x
         let dy = point.y - yourSeaArea.frame.height
@@ -71,12 +73,22 @@ class ViewController: UIViewController {
             let imgX = imgView.center.x
             let imgY = container!.center.y
             if(imgX > startX && imgX < endX && imgY > startY && imgY < endY){
-                passedCells.append(imgView)
+                passedCells.append(imgView.tag)
                 if(passedCells.count > 2){
                     passedCells.remove(at: 0)
                 }
             }
         }
+    }
+    
+    func arrangeShipsForMachine (){
+        shipsForMachine = []
+        repeat{
+            let randomInt = Int.random(in: 201...260)
+            if(!shipsForMachine.contains(randomInt)){
+                shipsForMachine.append(randomInt)
+            }
+        }while shipsForMachine.count < 12
     }
 
 }
