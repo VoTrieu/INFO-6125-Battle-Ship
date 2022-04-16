@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 // import AVFoundation
 import AVFoundation
@@ -13,11 +14,13 @@ import AVFoundation
 
 
 class ViewController: UIViewController {
+    var userEmail: String?
     
     var player: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(userEmail ?? "Unknow")
         // Do any additional setup after loading the view.
     }
 
