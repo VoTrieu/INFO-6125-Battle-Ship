@@ -65,8 +65,8 @@ class LoginViewController: UIViewController {
 
         ref = Database.database().reference()
         
-        ref.child("users/").queryOrdered(byChild: "score").queryLimited(toLast: 3).observe(.value, with: { snapshot in
-            for child in (snapshot.children.allObjects as! [DataSnapshot]).reversed(){
+        ref.child("users/").queryOrdered(byChild: "score").queryLimited(toFirst: 3).observe(.value, with: { snapshot in
+            for child in (snapshot.children.allObjects as! [DataSnapshot]){
                 print(child.childSnapshot(forPath: "username").value! as! String)
             }
       })
@@ -107,6 +107,8 @@ class LoginViewController: UIViewController {
                     strongSelf.showAlert(message: "Error authenticating user")
                     return
                 }
+                // so it can be accessed in the prepare segue function
+                strongSelf.userIdentifer = authResult?.user.uid
                 strongSelf.performSegue(withIdentifier: strongSelf.mainSegue, sender: strongSelf)
             }
         }
@@ -135,5 +137,11 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToWelcome" {
+            let destination = segue.destination as! ViewController
+            destination.userEmail = userIdentifer
+        }
+    }
 
 }
