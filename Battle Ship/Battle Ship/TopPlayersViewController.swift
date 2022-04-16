@@ -6,31 +6,47 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
 
 class TopPlayersViewController: UIViewController {
     
+    
     @IBOutlet weak var leaderBoardTable: UITableView!
     
+    var databaseRef: DatabaseReference?
     private var players: [Player] = []
     
+    private var mainSegue: String = "goToMain"
+    private var signUpSegue: String = "goToSignUp"
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        
+        // adding data from the firebase
+        databaseRef = Database.database().reference()
+        databaseRef?.child("users/").queryOrdered(byChild: "score").queryLimited(toFirst: 10).observe(.value, with: { snapshot in
+            guard let value = snapshot.value as? [String: Any] else {return}
+            if let playerName = value["username"] as? String, let score = value["score"] as? Int {
+                let player = Player(playerName: playerName, score: score)
+                self.players.append(player)
+                let indexPath = IndexPath(row: self.players.count - 1, section: 0)
+                self.leaderBoardTable.insertRows(at: [indexPath], with: .automatic)
+            }
+        })
+        
         loadMockData()
         
         leaderBoardTable.dataSource = self
         
     }
     
-
-    private func loadTableData(){
-        
-    }
     
     private func loadMockData(){
-        players.append(Player(playerName: "Tien", hits: 24))
-        players.append(Player(playerName: "Trieu", hits: 20))
-        players.append(Player(playerName: "Dumidu", hits: 34))
+        players.append(Player(playerName: "Tien", score: 24))
+        players.append(Player(playerName: "Trieu", score: 20))
+        players.append(Player(playerName: "Dumidu", score: 34))
     }
     
     /*
@@ -58,7 +74,9 @@ extension TopPlayersViewController: UITableViewDataSource {
         
         var content = cell.defaultContentConfiguration()
         content.text = item.playerName
-        content.secondaryText = String(item.hits)
+        content.secondaryText = String(item.score)
+        
+        cell.textLabel?.textColor = UIColor.white
         
         cell.contentConfiguration = content
         
@@ -71,5 +89,5 @@ extension TopPlayersViewController: UITableViewDataSource {
 
 struct Player{
     let playerName: String
-    let hits: Int
+    let score: Int
 }
