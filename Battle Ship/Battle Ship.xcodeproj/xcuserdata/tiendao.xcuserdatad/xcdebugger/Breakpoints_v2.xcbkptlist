@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "AD004452-DEDC-4117-BA28-002B67A560C7"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D2B2FF0-B2C1-4CE7-AFB9-2525A85212A5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Battle Ship/SignUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "SignUpViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "7D2B2FF0-B2C1-4CE7-AFB9-2525A85212A5 - 3eceeffe76677865"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.SignUpViewController.passwordMsgError.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "7D2B2FF0-B2C1-4CE7-AFB9-2525A85212A5 - ee35fe9a6d9d9c51"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.SignUpViewController.passwordMsgError.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "7D2B2FF0-B2C1-4CE7-AFB9-2525A85212A5 - 296360a59ae19162"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.SignUpViewController.passwordMsgError.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "7D2B2FF0-B2C1-4CE7-AFB9-2525A85212A5 - d0cfbb07d59e01e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.SignUpViewController.passwordMsgError.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "7D2B2FF0-B2C1-4CE7-AFB9-2525A85212A5 - cd53550922b972fe"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.SignUpViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Battle_Ship.SignUpViewController"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "7D2B2FF0-B2C1-4CE7-AFB9-2525A85212A5 - 2a97f6499307f403"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.SignUpViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Battle_Ship.SignUpViewController&gt;"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42DFACB9-5DEF-4916-9877-0CF6F3420418"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Battle Ship/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "LoginViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "42DFACB9-5DEF-4916-9877-0CF6F3420418 - 14e92a89f872f998"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.LoginViewController.userIdentifer.getter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "42DFACB9-5DEF-4916-9877-0CF6F3420418 - 17067521ae5b298c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.LoginViewController.userIdentifer.setter : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "42DFACB9-5DEF-4916-9877-0CF6F3420418 - bcd7def5c6421d9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.LoginViewController.userIdentifer.modify : Swift.Optional&lt;Swift.String&gt;"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "42DFACB9-5DEF-4916-9877-0CF6F3420418 - d3d9bb070f32b286"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.LoginViewController.userIdentifer.modify : Swift.Optional&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "42DFACB9-5DEF-4916-9877-0CF6F3420418 - 156c49e87cd3ffd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.LoginViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Battle_Ship.LoginViewController"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "816">
+               </Location>
+               <Location
+                  uuid = "42DFACB9-5DEF-4916-9877-0CF6F3420418 - a6023b97a3635dd0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Battle_Ship.LoginViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Battle_Ship.LoginViewController&gt;"
+                  moduleName = "Battle Ship"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiendao/Documents/MAP1/INFO_6125_iOSApplicationsDevelopment/FinalProject/Battle%20Ship/Battle%20Ship/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "792">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

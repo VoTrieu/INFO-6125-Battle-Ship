@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		373F285E2809F7DD00F4A083 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F285D2809F7DD00F4A083 /* LoginViewController.swift */; };
-		373F2860280A07E700F4A083 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 373F285F280A07E700F4A083 /* GoogleService-Info.plist */; };
 		373F2863280A093E00F4A083 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 373F2862280A093E00F4A083 /* FirebaseAuth */; };
+		373F2865280A1FDC00F4A083 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F2864280A1FDC00F4A083 /* SignUpViewController.swift */; };
+		373F2868280A27B700F4A083 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 373F2867280A27B700F4A083 /* FirebaseDatabase */; };
+		373F286C280A284200F4A083 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 373F286B280A284200F4A083 /* GoogleService-Info.plist */; };
 		FB528216280946CB0036A6C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB528215280946CB0036A6C5 /* AppDelegate.swift */; };
 		FB528218280946CB0036A6C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB528217280946CB0036A6C5 /* SceneDelegate.swift */; };
 		FB52821A280946CB0036A6C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB528219280946CB0036A6C5 /* ViewController.swift */; };
@@ -20,7 +22,8 @@
 
 /* Begin PBXFileReference section */
 		373F285D2809F7DD00F4A083 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		373F285F280A07E700F4A083 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		373F2864280A1FDC00F4A083 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		373F286B280A284200F4A083 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB528212280946CB0036A6C5 /* Battle Ship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Battle Ship.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB528215280946CB0036A6C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB528217280946CB0036A6C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373F2868280A27B700F4A083 /* FirebaseDatabase in Frameworks */,
 				373F2863280A093E00F4A083 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,11 +47,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		373F2866280A27B700F4A083 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FB528209280946CB0036A6C5 = {
 			isa = PBXGroup;
 			children = (
 				FB528214280946CB0036A6C5 /* Battle Ship */,
 				FB528213280946CB0036A6C5 /* Products */,
+				373F2866280A27B700F4A083 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,12 +74,13 @@
 		FB528214280946CB0036A6C5 /* Battle Ship */ = {
 			isa = PBXGroup;
 			children = (
-				373F285F280A07E700F4A083 /* GoogleService-Info.plist */,
+				373F286B280A284200F4A083 /* GoogleService-Info.plist */,
 				FB528215280946CB0036A6C5 /* AppDelegate.swift */,
 				FB528217280946CB0036A6C5 /* SceneDelegate.swift */,
 				FB528219280946CB0036A6C5 /* ViewController.swift */,
 				373F285D2809F7DD00F4A083 /* LoginViewController.swift */,
 				FB52821B280946CB0036A6C5 /* Main.storyboard */,
+				373F2864280A1FDC00F4A083 /* SignUpViewController.swift */,
 				FB52821E280946CC0036A6C5 /* Assets.xcassets */,
 				FB528220280946CC0036A6C5 /* LaunchScreen.storyboard */,
 				FB528223280946CC0036A6C5 /* Info.plist */,
@@ -93,6 +106,7 @@
 			name = "Battle Ship";
 			packageProductDependencies = (
 				373F2862280A093E00F4A083 /* FirebaseAuth */,
+				373F2867280A27B700F4A083 /* FirebaseDatabase */,
 			);
 			productName = "Battle Ship";
 			productReference = FB528212280946CB0036A6C5 /* Battle Ship.app */;
@@ -140,7 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB528222280946CC0036A6C5 /* LaunchScreen.storyboard in Resources */,
-				373F2860280A07E700F4A083 /* GoogleService-Info.plist in Resources */,
+				373F286C280A284200F4A083 /* GoogleService-Info.plist in Resources */,
 				FB52821F280946CC0036A6C5 /* Assets.xcassets in Resources */,
 				FB52821D280946CB0036A6C5 /* Main.storyboard in Resources */,
 			);
@@ -157,6 +171,7 @@
 				FB52821A280946CB0036A6C5 /* ViewController.swift in Sources */,
 				FB528216280946CB0036A6C5 /* AppDelegate.swift in Sources */,
 				FB528218280946CB0036A6C5 /* SceneDelegate.swift in Sources */,
+				373F2865280A1FDC00F4A083 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +408,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 373F2861280A093E00F4A083 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		373F2867280A27B700F4A083 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 373F2861280A093E00F4A083 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,6 +9,8 @@ import UIKit
 import FirebaseAuth
 
 
+
+
 class LoginViewController: UIViewController {
 
     /**Variable and const**/
@@ -28,19 +30,20 @@ class LoginViewController: UIViewController {
     
     private var userIdentifer: String?
     private var mainSegue: String = "goToMain"
+    private var signUpSegue: String = "goToSignUp"
     
     
     /**Hepper functions**/
     /**TODO:  Hide or show the error message**/
     private func hideAllErrorMsg(state:Bool) {
-        accountMsgError.isHidden = state;
-        passwordMsgError.isHidden = state;
+        accountMsgError.alpha = state ? 0.0 : 1.0;
+        passwordMsgError.alpha = state ? 0.0 : 1.0;
     }
     
     /**TODO: Check if textField empty or not to change state of error messages**/
     private func checkEmptyField() {
-        accountMsgError.isHidden = accountTextField.text == "" ? false : true;
-        passwordMsgError.isHidden = passwordTextField.text == "" ? false : true;
+        accountMsgError.alpha = accountTextField.text == "" ? 1.0 : 0.0;
+        passwordMsgError.alpha = passwordTextField.text == "" ? 1.0 : 0.0;
     }
     /**TODO:  Both email and password must have value for login button enable**/
     private func changeSubmitBtn() {
@@ -61,13 +64,13 @@ class LoginViewController: UIViewController {
     
     /**When user typing account, the error will disappear**/
     @IBAction func accountEditingChanged(_ sender: UITextField) {
-        accountMsgError.isHidden = accountTextField.text == "" ? false : true;
+        accountMsgError.alpha = accountTextField.text == "" ? 1.0 : 0.0;
         changeSubmitBtn();
     }
     
     /**When user typing password, the error will disappear**/
     @IBAction func passwordEditingChanged(_ sender: UITextField) {
-        passwordMsgError.isHidden = passwordTextField.text == "" ? false : true;
+        passwordMsgError.alpha = passwordTextField.text == "" ? 1.0 : 0.0;
         changeSubmitBtn();
     }
     
@@ -103,7 +106,12 @@ class LoginViewController: UIViewController {
     }
     
     
+    @IBAction func signUpBtnTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: self.signUpSegue, sender: self)
 
+    }
+    
     /*
     // MARK: - Navigation
 
