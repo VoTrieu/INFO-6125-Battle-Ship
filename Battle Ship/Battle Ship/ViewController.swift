@@ -66,7 +66,7 @@ class ViewController: UIViewController {
         setTapGestureForImageViews()
         
         //play background music
-//        playAudioTrack(fileName: "BattleThemeIVLooping")
+       playAudioTrack(fileName: "BattleThemeIVLooping")
     }
 
     @objc func draggingShips (_ sender: UIPanGestureRecognizer){
