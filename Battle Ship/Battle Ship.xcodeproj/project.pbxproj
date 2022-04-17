@@ -23,9 +23,7 @@
 		0BDE48252809E400000632E6 /* splash2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE48212809E400000632E6 /* splash2.mp3 */; };
 		0BDE48262809E400000632E6 /* splash4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE48222809E400000632E6 /* splash4.mp3 */; };
 		373F285E2809F7DD00F4A083 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F285D2809F7DD00F4A083 /* LoginViewController.swift */; };
-		373F2863280A093E00F4A083 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 373F2862280A093E00F4A083 /* FirebaseAuth */; };
 		373F2865280A1FDC00F4A083 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F2864280A1FDC00F4A083 /* SignUpViewController.swift */; };
-		373F2868280A27B700F4A083 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 373F2867280A27B700F4A083 /* FirebaseDatabase */; };
 		373F286C280A284200F4A083 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 373F286B280A284200F4A083 /* GoogleService-Info.plist */; };
 		FB528216280946CB0036A6C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB528215280946CB0036A6C5 /* AppDelegate.swift */; };
 		FB528218280946CB0036A6C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB528217280946CB0036A6C5 /* SceneDelegate.swift */; };
@@ -33,6 +31,9 @@
 		FB52821D280946CB0036A6C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB52821B280946CB0036A6C5 /* Main.storyboard */; };
 		FB52821F280946CC0036A6C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB52821E280946CC0036A6C5 /* Assets.xcassets */; };
 		FB528222280946CC0036A6C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB528220280946CC0036A6C5 /* LaunchScreen.storyboard */; };
+		FB52822A280B20F60036A6C5 /* BattleThemeIVLooping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB528229280B20F60036A6C5 /* BattleThemeIVLooping.mp3 */; };
+		FB52822D280B39110036A6C5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FB52822C280B39110036A6C5 /* FirebaseAuth */; };
+		FB52822F280B391E0036A6C5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FB52822E280B391E0036A6C5 /* FirebaseDatabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		FB52821E280946CC0036A6C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB528221280946CC0036A6C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB528223280946CC0036A6C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB528229280B20F60036A6C5 /* BattleThemeIVLooping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BattleThemeIVLooping.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				373F2868280A27B700F4A083 /* FirebaseDatabase in Frameworks */,
-				373F2863280A093E00F4A083 /* FirebaseAuth in Frameworks */,
+				FB52822F280B391E0036A6C5 /* FirebaseDatabase in Frameworks */,
+				FB52822D280B39110036A6C5 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +84,7 @@
 			children = (
 				0BDE481F2809E400000632E6 /* splash1.mp3 */,
 				0BDE48212809E400000632E6 /* splash2.mp3 */,
+				FB528229280B20F60036A6C5 /* BattleThemeIVLooping.mp3 */,
 				0BDE48202809E400000632E6 /* splash3.mp3 */,
 				0BDE48222809E400000632E6 /* splash4.mp3 */,
 				0BDE48112809E1D7000632E6 /* explosion1.mp3 */,
@@ -103,6 +106,7 @@
 			children = (
 				FB528214280946CB0036A6C5 /* Battle Ship */,
 				FB528213280946CB0036A6C5 /* Products */,
+				FB52822B280B39110036A6C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +137,13 @@
 			path = "Battle Ship";
 			sourceTree = "<group>";
 		};
+		FB52822B280B39110036A6C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,8 +161,8 @@
 			);
 			name = "Battle Ship";
 			packageProductDependencies = (
-				373F2862280A093E00F4A083 /* FirebaseAuth */,
-				373F2867280A27B700F4A083 /* FirebaseDatabase */,
+				FB52822C280B39110036A6C5 /* FirebaseAuth */,
+				FB52822E280B391E0036A6C5 /* FirebaseDatabase */,
 			);
 			productName = "Battle Ship";
 			productReference = FB528212280946CB0036A6C5 /* Battle Ship.app */;
@@ -204,6 +215,7 @@
 				0BDE481A2809E1D7000632E6 /* explosion2.mp3 in Resources */,
 				0BDE48152809E1D7000632E6 /* explosion8.mp3 in Resources */,
 				0BDE481C2809E1D7000632E6 /* explosion5.mp3 in Resources */,
+				FB52822A280B20F60036A6C5 /* BattleThemeIVLooping.mp3 in Resources */,
 				FB52821F280946CC0036A6C5 /* Assets.xcassets in Resources */,
 				0BDE48252809E400000632E6 /* splash2.mp3 in Resources */,
 				0BDE48232809E400000632E6 /* splash1.mp3 in Resources */,
@@ -464,12 +476,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		373F2862280A093E00F4A083 /* FirebaseAuth */ = {
+		FB52822C280B39110036A6C5 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 373F2861280A093E00F4A083 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		373F2867280A27B700F4A083 /* FirebaseDatabase */ = {
+		FB52822E280B391E0036A6C5 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 373F2861280A093E00F4A083 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
