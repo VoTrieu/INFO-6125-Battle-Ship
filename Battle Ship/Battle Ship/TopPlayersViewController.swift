@@ -17,9 +17,6 @@ class TopPlayersViewController: UIViewController {
     var databaseRef: DatabaseReference?
     private var players: [Player] = []
     
-    private var mainSegue: String = "goToMain"
-    private var signUpSegue: String = "goToSignUp"
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -27,38 +24,21 @@ class TopPlayersViewController: UIViewController {
         // adding data from the firebase
         databaseRef = Database.database().reference()
         databaseRef?.child("users/").queryOrdered(byChild: "score").queryLimited(toFirst: 10).observe(.value, with: { snapshot in
-            guard let value = snapshot.value as? [String: Any] else {return}
-            if let playerName = value["username"] as? String, let score = value["score"] as? Int {
-                let player = Player(playerName: playerName, score: score)
+
+            for child in (snapshot.children.allObjects as! [DataSnapshot]){
+                let playerName = child.childSnapshot(forPath: "username").value! as! String
+                let playerScore = child.childSnapshot(forPath: "score").value! as! Int
+                let player = Player(playerName: playerName, score: playerScore)
                 self.players.append(player)
-                let indexPath = IndexPath(row: self.players.count - 1, section: 0)
-                self.leaderBoardTable.insertRows(at: [indexPath], with: .automatic)
             }
+            self.players = self.players.reversed()
+            self.leaderBoardTable.reloadData()
+            
         })
-        
-        loadMockData()
         
         leaderBoardTable.dataSource = self
         
     }
-    
-    
-    private func loadMockData(){
-        players.append(Player(playerName: "Tien", score: 24))
-        players.append(Player(playerName: "Trieu", score: 20))
-        players.append(Player(playerName: "Dumidu", score: 34))
-    }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension TopPlayersViewController: UITableViewDataSource {
@@ -72,16 +52,13 @@ extension TopPlayersViewController: UITableViewDataSource {
         let cell = leaderBoardTable.dequeueReusableCell(withIdentifier: "playerStat", for: indexPath)
         let item = players[indexPath.row]
         
-        var content = cell.defaultContentConfiguration()
-        content.text = item.playerName
-        content.secondaryText = String(item.score)
-        
-        cell.textLabel?.textColor = UIColor.white
-        
-        cell.contentConfiguration = content
-        
+        cell.textLabel?.text = item.playerName
+        cell.detailTextLabel?.text = "\(item.score)"
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 20.0)
+        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 20.0)
+ 
         return cell
-        
+
     }
     
 }
