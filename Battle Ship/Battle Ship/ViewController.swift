@@ -103,6 +103,11 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func showLeaderBoard(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToLeaderBoard", sender: self)
+    }
+    
+    
     @IBAction func logout(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
