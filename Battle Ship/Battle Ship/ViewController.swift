@@ -8,10 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-
-// import AVFoundation
 import AVFoundation
-// implement audio functionality
 
 
 class ViewController: UIViewController {
@@ -97,7 +94,13 @@ class ViewController: UIViewController {
         arrangeShipsForMachine()
         isGameStarted = true
         player?.stop()
-        showAlert(title: "Information", message: "Let do attack the Machine first!"){}
+        showAlert(title: "Information", message: "Let do attack the Machine first!", showCancel: false){}
+    }
+    
+    @IBAction func resetGame(_ sender: UIButton) {
+        showAlert(title: "Confirmation", message: "Do you want to reset game?", showCancel: true) {
+            self.resetGame()
+        }
     }
     
     func getSelectedCells(shipPoint: CGPoint){
@@ -168,7 +171,7 @@ class ViewController: UIViewController {
     
     func checkIfEndGame(){
         if(machineOnTargetShoots == 12){
-            showAlert(title: "Information", message: "Oh No! The machine won!. Let's try again!"){
+            showAlert(title: "Information", message: "Oh No! The machine won!. Let's try again!", showCancel: false){
                 self.resetGame()
             }
             return
@@ -176,7 +179,7 @@ class ViewController: UIViewController {
         
         if(userOnTargetShoots == 12){
             let score = calculateScore()
-            showAlert(title: "Information", message: "Congratulation! You are the winner, and you gained \(score) scores. Let's try again!"){
+            showAlert(title: "Information", message: "Congratulation! You are the winner, and you gained \(score) scores. Let's try again!", showCancel: false){
                 self.resetGame()
             }
         }
@@ -222,18 +225,27 @@ class ViewController: UIViewController {
     
     func checkIfUserIsReady() -> Bool{
         if(numberOfMovedShips < 6){
-            showAlert(title: "Information", message: "You have not finished arranging your ships"){}
+            showAlert(title: "Information", message: "You have not finished arranging your ships", showCancel: false){}
             return false
         }
         return true
     }
     
-    func showAlert(title: String, message: String, _handler: @escaping () -> Void){
+    func showAlert(title: String, message: String, showCancel: Bool, _handler: @escaping () -> Void){
         let dialogMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        
         let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
             _handler()
         })
+        
+        if(showCancel){
+            dialogMessage.addAction(cancel)
+        }
+        
          dialogMessage.addAction(ok)
+        
         self.present(dialogMessage, animated: true, completion: nil)
     }
 

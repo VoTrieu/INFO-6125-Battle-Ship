@@ -313,7 +313,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f2n-vI-NWb">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f2n-vI-NWb">
                                 <rect key="frame" x="20" y="0.0" width="794" height="1174"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Jr-WH-daP">
@@ -1082,6 +1082,9 @@
                                                     <fontDescription key="titleFontDescription" name=".SFUI-Semibold" family=".AppleSystemUIFont" pointSize="30"/>
                                                     <color key="baseBackgroundColor" red="0.23921568630000001" green="0.61960784310000006" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="resetGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2al-QC-DXb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="VR3-ZR-wsM">
                                                 <rect key="frame" x="510" y="79" width="120" height="47.5"/>
