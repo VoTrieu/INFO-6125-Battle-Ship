@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 // import AVFoundation
 import AVFoundation
@@ -26,15 +27,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var ship6: UIImageView!
     @IBOutlet weak var yourSeaArea: UIStackView!
     
+    private let fireBaseRef = Database.database().reference()
     private var ships: [UIImageView] = []
     private var originalLocationOfShips: [CGPoint] = []
     private let machineSeaAreaTags = 201...260
     private let userSeaAreaTags = 101...160
+    private let totalShootNumber = 60
     private var shipContainedCells:[Int] = []
     private var passedCells: [Int] = []
     private var shipsForMachine:[Int] = []
     private var attackedCells:[Int] = []
-    private var draggedShipTag:Int = 0
     private let tolerance = 50
     private var isShooting = false
     private var isGameStarted = false
@@ -69,28 +71,21 @@ class ViewController: UIViewController {
 
     @objc func draggingShips (_ sender: UIPanGestureRecognizer){
         let draggedShip = sender.view!
-        let isNewShip = draggedShipTag != draggedShip.tag
-        
-        //count the moved ships
-        if(isNewShip){
-            numberOfMovedShips += 1
-        }
-        
-        //collect selected cells
-        if(draggedShipTag != 0 && isNewShip){
-            shipContainedCells.append(contentsOf: passedCells)
-        }
-        
-        draggedShipTag = draggedShip.tag
-        
         let point = sender.location(in: yourSeaArea)
+        
         let dx = point.x
         let dy = point.y - yourSeaArea.frame.height
         let newPoint = CGPoint(x: dx, y: dy)
         if(dy > (-yourSeaArea.frame.height + CGFloat(tolerance)) && (dx > 20 && dx < yourSeaArea.frame.width)){
             draggedShip.center = newPoint
         }
-        getSelectedCells(shipPoint: point)
+        
+        if(sender.state == UIPanGestureRecognizer.State.ended){
+            getSelectedCells(shipPoint: point)
+            numberOfMovedShips += 1
+            shipContainedCells.append(contentsOf: passedCells)
+            passedCells = []
+        }
     }
     
     
@@ -120,7 +115,7 @@ class ViewController: UIViewController {
             let imgY = container!.center.y
             if(imgX > startX && imgX < endX && imgY > startY && imgY < endY){
                 if(passedCells.contains(imgView.tag)){
-                    return
+                    continue
                 }
                 
                 passedCells.append(imgView.tag)
@@ -128,12 +123,6 @@ class ViewController: UIViewController {
                 // One ship only be placed on 2 cells
                 if(passedCells.count > 2){
                     passedCells.remove(at: 0)
-                    
-                    // correct selected cells in column
-                    let gapCellValue = passedCells[1] - passedCells[0]
-                    if(gapCellValue != 10){
-                        passedCells[0] = passedCells[1] - 10
-                    }
                 }
             }
         }
@@ -151,8 +140,6 @@ class ViewController: UIViewController {
     
     func machineAttack(){
         isShooting = true
-        //add position of the last ship'
-        addPositionOfTheLastShip()
         
         var validCell = false
         while(validCell == false) {
@@ -163,13 +150,6 @@ class ViewController: UIViewController {
                 validCell = true
                 isShooting = false
             }
-        }
-    }
-    
-    func addPositionOfTheLastShip(){
-        if(passedCells.count == 2){
-            shipContainedCells.append(contentsOf: passedCells)
-            passedCells = []
         }
     }
     
@@ -195,7 +175,8 @@ class ViewController: UIViewController {
         }
         
         if(userOnTargetShoots == 12){
-            showAlert(title: "Information", message: "Congratulation! You are the winner, and you gained 100 scores. Let's try again!"){
+            let score = calculateScore()
+            showAlert(title: "Information", message: "Congratulation! You are the winner, and you gained \(score) scores. Let's try again!"){
                 self.resetGame()
             }
         }
@@ -225,8 +206,13 @@ class ViewController: UIViewController {
         }else{
             imgView?.image = UIImage(named: "waterSplash2")
             playAudioTrack(fileName: "splash2")
+            userMissingShoots += 1
         }
         
+        //Machine stop attach when user won
+        if(userOnTargetShoots == 12){
+            return
+        }
         // Machine attach user after 2 second
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.isShooting = false
@@ -254,9 +240,11 @@ class ViewController: UIViewController {
     func resetGame(){
         arrangeShipsForMachine()
         userOnTargetShoots = 0
+        userMissingShoots = 0
         machineOnTargetShoots = 0
         shipContainedCells = []
         attackedCells = []
+        
         for tag in [userSeaAreaTags, machineSeaAreaTags].joined() {
             let imgView = self.view.viewWithTag(tag) as? UIImageView
             imgView?.image = nil
@@ -267,18 +255,14 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    func calculateScore() -> Int{
+        let score = (totalShootNumber - userMissingShoots) * 100
+        fireBaseRef.child("users/oiAsaR6XpuWu35uyXCZLD4SPcMp1/score").setValue(score)
+        return score
+    }
 
     private func playAudioTrack(fileName:String){
-//        if let player = player, player.isPlaying {
-//            // stop playback
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                player.stop()
-//            }
-//
-//        }else{
-            // set up the player and play
-            
-            // setup the url
             let urlString = Bundle.main.path(forResource: fileName, ofType: "mp3")
             
             do{            
@@ -298,9 +282,8 @@ class ViewController: UIViewController {
                 player.play()
             }
             catch{
-                print("error occured")
+                print("Audio error occured")
             }
-//        }
     }
 
 }
