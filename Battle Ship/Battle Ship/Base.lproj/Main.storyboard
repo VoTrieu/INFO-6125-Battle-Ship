@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wEI-DD-Xxh">
     <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -131,6 +131,7 @@
                             <constraint firstItem="gw8-ts-LCQ" firstAttribute="top" secondItem="Tqp-qZ-wfD" secondAttribute="bottom" constant="58" id="zGo-1Z-ZXv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="JF6-t3-gcJ"/>
                     <connections>
                         <outlet property="accountMsgError" destination="Ol4-Kh-oUI" id="KOp-04-NZ8"/>
                         <outlet property="accountTextField" destination="aPp-Ua-URt" id="Wjq-g2-P6K"/>
@@ -143,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HeG-vb-qFp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-665" y="-201"/>
+            <point key="canvasLocation" x="-431" y="-237"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="ezC-ri-NRN">
@@ -303,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKy-ve-qnS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1529" y="539"/>
+            <point key="canvasLocation" x="-1296" y="400"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -313,7 +314,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f2n-vI-NWb">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f2n-vI-NWb">
                                 <rect key="frame" x="20" y="0.0" width="794" height="1174"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5Jr-WH-daP">
@@ -1054,6 +1055,9 @@
                                                     <fontDescription key="titleFontDescription" name=".SFUI-Semibold" family=".AppleSystemUIFont" pointSize="30"/>
                                                     <color key="baseBackgroundColor" red="0.23921568630000001" green="0.61960784310000006" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nDP-M5-sd1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="rrN-ar-yRF">
                                                 <rect key="frame" x="510" y="14" width="120" height="47.5"/>
@@ -1082,6 +1086,9 @@
                                                     <fontDescription key="titleFontDescription" name=".SFUI-Semibold" family=".AppleSystemUIFont" pointSize="30"/>
                                                     <color key="baseBackgroundColor" red="0.23921568630000001" green="0.61960784310000006" blue="0.0" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="resetGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2al-QC-DXb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="VR3-ZR-wsM">
                                                 <rect key="frame" x="510" y="79" width="120" height="47.5"/>
@@ -1154,15 +1161,16 @@
                         <outlet property="ship5" destination="MBm-by-a1j" id="srQ-W5-g5q"/>
                         <outlet property="ship6" destination="6mG-I4-zbO" id="T09-xy-3vn"/>
                         <outlet property="yourSeaArea" destination="gCG-RL-fuX" id="car-xE-nCa"/>
+                        <segue destination="wEI-DD-Xxh" kind="presentation" identifier="goToLogin" modalPresentationStyle="fullScreen" id="XG8-iA-l0B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305.75539568345329" y="-201.00502512562815"/>
+            <point key="canvasLocation" x="383" y="-769"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vB5-Wu-Zuj"/>
+        <segue reference="XG8-iA-l0B"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemIndigoColor"/>
     <resources>

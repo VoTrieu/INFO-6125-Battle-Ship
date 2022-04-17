@@ -65,9 +65,10 @@ class LoginViewController: UIViewController {
 
         ref = Database.database().reference()
         
-        ref.child("users/").queryOrdered(byChild: "score").queryLimited(toFirst: 3).observe(.value, with: { snapshot in
+        ref.child("users/").queryOrdered(byChild: "score").queryLimited(toFirst: 10).observe(.value, with: { snapshot in
             for child in (snapshot.children.allObjects as! [DataSnapshot]){
                 print(child.childSnapshot(forPath: "username").value! as! String)
+                print(child.childSnapshot(forPath: "score").value! as! Int)
             }
       })
 
@@ -138,9 +139,9 @@ class LoginViewController: UIViewController {
     }
     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToWelcome" {
+        if segue.identifier == mainSegue {
             let destination = segue.destination as! ViewController
-            destination.userEmail = userIdentifer
+            destination.userId = userIdentifer
         }
     }
 
