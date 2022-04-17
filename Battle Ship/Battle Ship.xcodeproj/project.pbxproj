@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B69E39E280B2B1000BD455B /* TopPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B69E39D280B2B1000BD455B /* TopPlayersViewController.swift */; };
 		0BDE48152809E1D7000632E6 /* explosion8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE480B2809E1D7000632E6 /* explosion8.mp3 */; };
 		0BDE48162809E1D7000632E6 /* explosion3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE480C2809E1D7000632E6 /* explosion3.mp3 */; };
 		0BDE48172809E1D7000632E6 /* explosion4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE480D2809E1D7000632E6 /* explosion4.mp3 */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B69E39D280B2B1000BD455B /* TopPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPlayersViewController.swift; sourceTree = "<group>"; };
 		0BDE480B2809E1D7000632E6 /* explosion8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion8.mp3; sourceTree = "<group>"; };
 		0BDE480C2809E1D7000632E6 /* explosion3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion3.mp3; sourceTree = "<group>"; };
 		0BDE480D2809E1D7000632E6 /* explosion4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion4.mp3; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				FB52821E280946CC0036A6C5 /* Assets.xcassets */,
 				FB528220280946CC0036A6C5 /* LaunchScreen.storyboard */,
 				FB528223280946CC0036A6C5 /* Info.plist */,
+				0B69E39D280B2B1000BD455B /* TopPlayersViewController.swift */,
 			);
 			path = "Battle Ship";
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				373F285E2809F7DD00F4A083 /* LoginViewController.swift in Sources */,
 				FB52821A280946CB0036A6C5 /* ViewController.swift in Sources */,
 				FB528216280946CB0036A6C5 /* AppDelegate.swift in Sources */,
+				0B69E39E280B2B1000BD455B /* TopPlayersViewController.swift in Sources */,
 				FB528218280946CB0036A6C5 /* SceneDelegate.swift in Sources */,
 				373F2865280A1FDC00F4A083 /* SignUpViewController.swift in Sources */,
 			);
