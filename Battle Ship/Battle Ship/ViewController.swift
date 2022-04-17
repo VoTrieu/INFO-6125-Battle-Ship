@@ -12,7 +12,7 @@ import AVFoundation
 
 
 class ViewController: UIViewController {
-    var userEmail: String?
+    var userId: String?
     
     var player: AVAudioPlayer?
 
@@ -44,7 +44,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(userEmail ?? "Unknow")
                 
         //implement drap and drop the ships
         let dragInteraction = UIDragInteraction(delegate: self)
@@ -101,6 +100,18 @@ class ViewController: UIViewController {
         showAlert(title: "Confirmation", message: "Do you want to reset game?", showCancel: true) {
             self.resetGame()
         }
+    }
+    
+    
+    @IBAction func logout(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+            self.performSegue(withIdentifier: "goToLogin", sender: self)
+            player?.stop()
+            resetGame()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+          }
     }
     
     func getSelectedCells(shipPoint: CGPoint){
@@ -270,7 +281,9 @@ class ViewController: UIViewController {
     
     func calculateScore() -> Int{
         let score = (totalShootNumber - userMissingShoots) * 100
-        fireBaseRef.child("users/oiAsaR6XpuWu35uyXCZLD4SPcMp1/score").setValue(score)
+        if(userId != nil){
+            fireBaseRef.child("users/\(userId ?? "")/score").setValue(score)
+        }
         return score
     }
 
