@@ -61,18 +61,6 @@ class LoginViewController: UIViewController {
         submitBtn.isEnabled = false;
         hideAllErrorMsg(state:true);
         
-        var ref: DatabaseReference!
-
-        ref = Database.database().reference()
-        
-        ref.child("users/").queryOrdered(byChild: "score").queryLimited(toFirst: 10).observe(.value, with: { snapshot in
-            for child in (snapshot.children.allObjects as! [DataSnapshot]){
-                print(child.childSnapshot(forPath: "username").value! as! String)
-                print(child.childSnapshot(forPath: "score").value! as! Int)
-            }
-      })
-
-
     }
     
     /**When user typing account, the error will disappear**/
@@ -124,7 +112,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func signUpBtnTapped(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
         self.performSegue(withIdentifier: self.signUpSegue, sender: self)
 
     }

@@ -112,8 +112,8 @@ class ViewController: UIViewController {
         do {
             try Auth.auth().signOut()
             self.performSegue(withIdentifier: "goToLogin", sender: self)
-            player?.stop()
             resetGame()
+            player?.stop()
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
           }
@@ -186,7 +186,7 @@ class ViewController: UIViewController {
     }
     
     func checkIfEndGame(){
-        if(machineOnTargetShoots == 12){
+        if(machineOnTargetShoots == shipContainedCells.count){
             showAlert(title: "Information", message: "Oh No! The machine won!. Let's try again!", showCancel: false){
                 self.resetGame()
             }
@@ -211,12 +211,19 @@ class ViewController: UIViewController {
     }
     
     @objc func userAttack(_ sender: UITapGestureRecognizer){
+        let imgView = sender.view as? UIImageView
         if(isShooting || !isGameStarted){
             return
         }
+        
+        //check if user already click on this imageView
+        if(imgView?.image != nil){
+            return
+        }
+        
         isShooting = true
         let tag = sender.view?.tag
-        let imgView = sender.view as? UIImageView
+        
         if(shipsForMachine.contains(tag!)){
             imgView?.image = UIImage(named: "explosion2")
             playAudioTrack(fileName: "explosion3")
@@ -272,6 +279,8 @@ class ViewController: UIViewController {
         machineOnTargetShoots = 0
         shipContainedCells = []
         attackedCells = []
+        isGameStarted = false
+        isShooting = false
         
         for tag in [userSeaAreaTags, machineSeaAreaTags].joined() {
             let imgView = self.view.viewWithTag(tag) as? UIImageView
