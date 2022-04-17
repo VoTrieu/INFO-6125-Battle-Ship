@@ -7,15 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B69E39E280B2B1000BD455B /* TopPlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B69E39D280B2B1000BD455B /* TopPlayersViewController.swift */; };
+		0BDE48152809E1D7000632E6 /* explosion8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE480B2809E1D7000632E6 /* explosion8.mp3 */; };
+		0BDE48162809E1D7000632E6 /* explosion3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE480C2809E1D7000632E6 /* explosion3.mp3 */; };
+		0BDE48172809E1D7000632E6 /* explosion4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE480D2809E1D7000632E6 /* explosion4.mp3 */; };
+		0BDE48182809E1D7000632E6 /* explosion9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE480E2809E1D7000632E6 /* explosion9.mp3 */; };
+		0BDE48192809E1D7000632E6 /* explosion10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE480F2809E1D7000632E6 /* explosion10.mp3 */; };
+		0BDE481A2809E1D7000632E6 /* explosion2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE48102809E1D7000632E6 /* explosion2.mp3 */; };
+		0BDE481B2809E1D7000632E6 /* explosion1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE48112809E1D7000632E6 /* explosion1.mp3 */; };
+		0BDE481C2809E1D7000632E6 /* explosion5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE48122809E1D7000632E6 /* explosion5.mp3 */; };
+		0BDE481D2809E1D7000632E6 /* explosion7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE48132809E1D7000632E6 /* explosion7.mp3 */; };
+		0BDE481E2809E1D7000632E6 /* explosion6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE48142809E1D7000632E6 /* explosion6.mp3 */; };
+		0BDE48232809E400000632E6 /* splash1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE481F2809E400000632E6 /* splash1.mp3 */; };
+		0BDE48242809E400000632E6 /* splash3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE48202809E400000632E6 /* splash3.mp3 */; };
+		0BDE48252809E400000632E6 /* splash2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE48212809E400000632E6 /* splash2.mp3 */; };
+		0BDE48262809E400000632E6 /* splash4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE48222809E400000632E6 /* splash4.mp3 */; };
+		373F285E2809F7DD00F4A083 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F285D2809F7DD00F4A083 /* LoginViewController.swift */; };
+		373F2865280A1FDC00F4A083 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373F2864280A1FDC00F4A083 /* SignUpViewController.swift */; };
+		373F286C280A284200F4A083 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 373F286B280A284200F4A083 /* GoogleService-Info.plist */; };
 		FB528216280946CB0036A6C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB528215280946CB0036A6C5 /* AppDelegate.swift */; };
 		FB528218280946CB0036A6C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB528217280946CB0036A6C5 /* SceneDelegate.swift */; };
 		FB52821A280946CB0036A6C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB528219280946CB0036A6C5 /* ViewController.swift */; };
 		FB52821D280946CB0036A6C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB52821B280946CB0036A6C5 /* Main.storyboard */; };
 		FB52821F280946CC0036A6C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB52821E280946CC0036A6C5 /* Assets.xcassets */; };
 		FB528222280946CC0036A6C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB528220280946CC0036A6C5 /* LaunchScreen.storyboard */; };
+		FB52822A280B20F60036A6C5 /* BattleThemeIVLooping.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FB528229280B20F60036A6C5 /* BattleThemeIVLooping.mp3 */; };
+		FB52822D280B39110036A6C5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FB52822C280B39110036A6C5 /* FirebaseAuth */; };
+		FB52822F280B391E0036A6C5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = FB52822E280B391E0036A6C5 /* FirebaseDatabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B69E39D280B2B1000BD455B /* TopPlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPlayersViewController.swift; sourceTree = "<group>"; };
+		0BDE480B2809E1D7000632E6 /* explosion8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion8.mp3; sourceTree = "<group>"; };
+		0BDE480C2809E1D7000632E6 /* explosion3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion3.mp3; sourceTree = "<group>"; };
+		0BDE480D2809E1D7000632E6 /* explosion4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion4.mp3; sourceTree = "<group>"; };
+		0BDE480E2809E1D7000632E6 /* explosion9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion9.mp3; sourceTree = "<group>"; };
+		0BDE480F2809E1D7000632E6 /* explosion10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion10.mp3; sourceTree = "<group>"; };
+		0BDE48102809E1D7000632E6 /* explosion2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion2.mp3; sourceTree = "<group>"; };
+		0BDE48112809E1D7000632E6 /* explosion1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion1.mp3; sourceTree = "<group>"; };
+		0BDE48122809E1D7000632E6 /* explosion5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion5.mp3; sourceTree = "<group>"; };
+		0BDE48132809E1D7000632E6 /* explosion7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion7.mp3; sourceTree = "<group>"; };
+		0BDE48142809E1D7000632E6 /* explosion6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = explosion6.mp3; sourceTree = "<group>"; };
+		0BDE481F2809E400000632E6 /* splash1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = splash1.mp3; sourceTree = "<group>"; };
+		0BDE48202809E400000632E6 /* splash3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = splash3.mp3; sourceTree = "<group>"; };
+		0BDE48212809E400000632E6 /* splash2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = splash2.mp3; sourceTree = "<group>"; };
+		0BDE48222809E400000632E6 /* splash4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = splash4.mp3; sourceTree = "<group>"; };
+		373F285D2809F7DD00F4A083 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		373F2864280A1FDC00F4A083 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		373F286B280A284200F4A083 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB528212280946CB0036A6C5 /* Battle Ship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Battle Ship.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB528215280946CB0036A6C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB528217280946CB0036A6C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +63,7 @@
 		FB52821E280946CC0036A6C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB528221280946CC0036A6C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB528223280946CC0036A6C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB528229280B20F60036A6C5 /* BattleThemeIVLooping.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BattleThemeIVLooping.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +71,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB52822F280B391E0036A6C5 /* FirebaseDatabase in Frameworks */,
+				FB52822D280B39110036A6C5 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BDE480A2809E18F000632E6 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				0BDE481F2809E400000632E6 /* splash1.mp3 */,
+				0BDE48212809E400000632E6 /* splash2.mp3 */,
+				FB528229280B20F60036A6C5 /* BattleThemeIVLooping.mp3 */,
+				0BDE48202809E400000632E6 /* splash3.mp3 */,
+				0BDE48222809E400000632E6 /* splash4.mp3 */,
+				0BDE48112809E1D7000632E6 /* explosion1.mp3 */,
+				0BDE48102809E1D7000632E6 /* explosion2.mp3 */,
+				0BDE480C2809E1D7000632E6 /* explosion3.mp3 */,
+				0BDE480D2809E1D7000632E6 /* explosion4.mp3 */,
+				0BDE48122809E1D7000632E6 /* explosion5.mp3 */,
+				0BDE48142809E1D7000632E6 /* explosion6.mp3 */,
+				0BDE48132809E1D7000632E6 /* explosion7.mp3 */,
+				0BDE480B2809E1D7000632E6 /* explosion8.mp3 */,
+				0BDE480E2809E1D7000632E6 /* explosion9.mp3 */,
+				0BDE480F2809E1D7000632E6 /* explosion10.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		FB528209280946CB0036A6C5 = {
 			isa = PBXGroup;
 			children = (
 				FB528214280946CB0036A6C5 /* Battle Ship */,
 				FB528213280946CB0036A6C5 /* Products */,
+				FB52822B280B39110036A6C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +121,27 @@
 		FB528214280946CB0036A6C5 /* Battle Ship */ = {
 			isa = PBXGroup;
 			children = (
+				373F286B280A284200F4A083 /* GoogleService-Info.plist */,
+				0BDE480A2809E18F000632E6 /* Sounds */,
 				FB528215280946CB0036A6C5 /* AppDelegate.swift */,
 				FB528217280946CB0036A6C5 /* SceneDelegate.swift */,
 				FB528219280946CB0036A6C5 /* ViewController.swift */,
+				373F285D2809F7DD00F4A083 /* LoginViewController.swift */,
 				FB52821B280946CB0036A6C5 /* Main.storyboard */,
+				373F2864280A1FDC00F4A083 /* SignUpViewController.swift */,
 				FB52821E280946CC0036A6C5 /* Assets.xcassets */,
 				FB528220280946CC0036A6C5 /* LaunchScreen.storyboard */,
 				FB528223280946CC0036A6C5 /* Info.plist */,
+				0B69E39D280B2B1000BD455B /* TopPlayersViewController.swift */,
 			);
 			path = "Battle Ship";
+			sourceTree = "<group>";
+		};
+		FB52822B280B39110036A6C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +160,10 @@
 			dependencies = (
 			);
 			name = "Battle Ship";
+			packageProductDependencies = (
+				FB52822C280B39110036A6C5 /* FirebaseAuth */,
+				FB52822E280B391E0036A6C5 /* FirebaseDatabase */,
+			);
 			productName = "Battle Ship";
 			productReference = FB528212280946CB0036A6C5 /* Battle Ship.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +192,9 @@
 				Base,
 			);
 			mainGroup = FB528209280946CB0036A6C5;
+			packageReferences = (
+				373F2861280A093E00F4A083 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = FB528213280946CB0036A6C5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +209,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BDE48242809E400000632E6 /* splash3.mp3 in Resources */,
 				FB528222280946CC0036A6C5 /* LaunchScreen.storyboard in Resources */,
+				373F286C280A284200F4A083 /* GoogleService-Info.plist in Resources */,
+				0BDE481A2809E1D7000632E6 /* explosion2.mp3 in Resources */,
+				0BDE48152809E1D7000632E6 /* explosion8.mp3 in Resources */,
+				0BDE481C2809E1D7000632E6 /* explosion5.mp3 in Resources */,
+				FB52822A280B20F60036A6C5 /* BattleThemeIVLooping.mp3 in Resources */,
 				FB52821F280946CC0036A6C5 /* Assets.xcassets in Resources */,
+				0BDE48252809E400000632E6 /* splash2.mp3 in Resources */,
+				0BDE48232809E400000632E6 /* splash1.mp3 in Resources */,
+				0BDE481B2809E1D7000632E6 /* explosion1.mp3 in Resources */,
 				FB52821D280946CB0036A6C5 /* Main.storyboard in Resources */,
+				0BDE48182809E1D7000632E6 /* explosion9.mp3 in Resources */,
+				0BDE481E2809E1D7000632E6 /* explosion6.mp3 in Resources */,
+				0BDE481D2809E1D7000632E6 /* explosion7.mp3 in Resources */,
+				0BDE48162809E1D7000632E6 /* explosion3.mp3 in Resources */,
+				0BDE48172809E1D7000632E6 /* explosion4.mp3 in Resources */,
+				0BDE48192809E1D7000632E6 /* explosion10.mp3 in Resources */,
+				0BDE48262809E400000632E6 /* splash4.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +238,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373F285E2809F7DD00F4A083 /* LoginViewController.swift in Sources */,
 				FB52821A280946CB0036A6C5 /* ViewController.swift in Sources */,
 				FB528216280946CB0036A6C5 /* AppDelegate.swift in Sources */,
+				0B69E39E280B2B1000BD455B /* TopPlayersViewController.swift in Sources */,
 				FB528218280946CB0036A6C5 /* SceneDelegate.swift in Sources */,
+				373F2865280A1FDC00F4A083 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +398,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -323,7 +426,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -360,6 +463,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		373F2861280A093E00F4A083 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FB52822C280B39110036A6C5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 373F2861280A093E00F4A083 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		FB52822E280B391E0036A6C5 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 373F2861280A093E00F4A083 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FB52820A280946CB0036A6C5 /* Project object */;
 }
