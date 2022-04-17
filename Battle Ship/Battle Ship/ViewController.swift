@@ -277,6 +277,9 @@ class ViewController: UIViewController {
             ship.center = originalLocationOfShips[index]
         }
         
+        //play background music
+       playAudioTrack(fileName: "BattleThemeIVLooping")
+        
     }
     
     func calculateScore() -> Int{
