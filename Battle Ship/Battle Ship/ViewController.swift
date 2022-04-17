@@ -186,7 +186,7 @@ class ViewController: UIViewController {
     }
     
     func checkIfEndGame(){
-        if(machineOnTargetShoots == 12){
+        if(machineOnTargetShoots == shipContainedCells.count){
             showAlert(title: "Information", message: "Oh No! The machine won!. Let's try again!", showCancel: false){
                 self.resetGame()
             }
