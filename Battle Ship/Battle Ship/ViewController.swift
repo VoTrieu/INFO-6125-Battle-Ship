@@ -112,8 +112,8 @@ class ViewController: UIViewController {
         do {
             try Auth.auth().signOut()
             self.performSegue(withIdentifier: "goToLogin", sender: self)
-            player?.stop()
             resetGame()
+            player?.stop()
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
           }
