@@ -63,6 +63,7 @@ class ViewController: UIViewController {
         
         //play background music
        playAudioTrack(fileName: "BattleThemeIVLooping")
+        
     }
 
     @objc func draggingShips (_ sender: UIPanGestureRecognizer){
@@ -299,7 +300,16 @@ class ViewController: UIViewController {
     func calculateScore() -> Int{
         let score = (totalShootNumber - userMissingShoots) * 100
         if(userId != nil){
-            fireBaseRef.child("users/\(userId ?? "")/score").setValue(score)
+            fireBaseRef.child("users/\(userId ?? "")/score").getData(completion:  { error, snapshot in
+              guard error == nil else {
+                print(error!.localizedDescription)
+                return;
+              }
+              let highestScore = snapshot.value as? Int ?? 0;
+                if(highestScore < score){
+                    self.fireBaseRef.child("users/\(self.userId ?? "")/score").setValue(score)
+                }
+            });
         }
         return score
     }
