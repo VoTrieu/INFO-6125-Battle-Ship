@@ -23,7 +23,7 @@ class TopPlayersViewController: UIViewController {
         
         // adding data from the firebase
         databaseRef = Database.database().reference()
-        databaseRef?.child("users/").queryOrdered(byChild: "score").queryLimited(toFirst: 10).observe(.value, with: { snapshot in
+        databaseRef?.child("users/").queryOrdered(byChild: "score").queryLimited(toFirst: 20).observe(.value, with: { snapshot in
 
             for child in (snapshot.children.allObjects as! [DataSnapshot]){
                 let playerName = child.childSnapshot(forPath: "username").value! as! String
