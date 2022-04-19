@@ -27,7 +27,7 @@ class TopPlayersViewController: UIViewController {
 
             for child in (snapshot.children.allObjects as! [DataSnapshot]){
                 let playerName = child.childSnapshot(forPath: "username").value! as! String
-                let playerScore = child.childSnapshot(forPath: "score").value! as! Int
+                let playerScore = child.childSnapshot(forPath: "score").value! as? Int ?? 0
                 let player = Player(playerName: playerName, score: playerScore)
                 self.players.append(player)
             }
