@@ -87,7 +87,10 @@ class SignUpViewController: UIViewController {
                 }else{
                     //user registered successfully
                     print(result!)
-                    ref.child("users").child((result?.user.uid)!).setValue(["username": self.userNameTextField.text])
+                    ref.child("users").child((result?.user.uid)!).setValue(
+                        ["username": self.userNameTextField.text!,
+                         "score": 0
+                        ])
                     self.dismiss(animated: true, completion: nil)
                     self.performSegue(withIdentifier: self.logInSegue, sender: self)
                 }
